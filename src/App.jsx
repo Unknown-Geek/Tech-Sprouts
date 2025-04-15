@@ -4,6 +4,7 @@ import Home from "./Home";
 import Courses from "./Courses";
 import Register from "./Register";
 import Contact from "./Contact";
+import Payment from "./Payment";
 import { Leaf } from "lucide-react";
 import "./index.css";
 import logo from "../assets/logo.png";
@@ -59,6 +60,7 @@ function App() {
           <Route path="/courses" element={<Courses />} />
           <Route path="/register" element={<Register />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/payment" element={<Payment />} />
         </Routes>
       </main>
       <footer className="bg-gray-800 text-white py-8 mt-8">

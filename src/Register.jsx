@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import { CheckCircle } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 import "./index.css";
 
 function Register() {
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     studentName: "",
     parentName: "",
@@ -11,13 +13,56 @@ function Register() {
     school: "",
     grade: "",
     interests: [],
+    course: "",
+    courseType: "",
     message: "",
   });
+
+  // Course data
+  const courseData = [
+    {
+      name: "BASICS Scratch",
+      perSession: "₹ 50",
+      fullCourse: "₹ 120",
+      perSessionValueRaw: 50,
+      fullCourseValueRaw: 120,
+    },
+    {
+      name: "MIT App Inventor",
+      perSession: "₹ 50",
+      fullCourse: "₹ 120",
+      perSessionValueRaw: 50,
+      fullCourseValueRaw: 120,
+    },
+    {
+      name: "Wix",
+      perSession: "₹ 50",
+      fullCourse: "₹ 120",
+      perSessionValueRaw: 50,
+      fullCourseValueRaw: 120,
+    },
+    {
+      name: "HTML",
+      perSession: "₹ 40",
+      fullCourse: "₹ 90",
+      perSessionValueRaw: 40,
+      fullCourseValueRaw: 90,
+    },
+    {
+      name: "Google Sites",
+      perSession: "₹ 40",
+      fullCourse: "₹ 90",
+      perSessionValueRaw: 40,
+      fullCourseValueRaw: 90,
+    },
+  ];
+
   const [formStatus, setFormStatus] = useState({
     submitting: false,
     submitted: false,
     error: null,
   });
+
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
     if (type === "checkbox") {
@@ -35,6 +80,7 @@ function Register() {
       setFormData((prev) => ({ ...prev, [name]: value }));
     }
   };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     setFormStatus({ submitting: true, submitted: false, error: null });
@@ -46,10 +92,13 @@ function Register() {
         Phone: formData.phone,
         School: formData.school,
         Grade: formData.grade,
+        Course: formData.course,
+        "Course Type": formData.courseType,
         Interests: formData.interests.join(", "),
         Message: formData.message,
         Timestamp: new Date().toISOString(),
       };
+
       const scriptURL = import.meta.env.VITE_GOOGLE_SCRIPT_URL;
       await fetch(scriptURL, {
         method: "POST",
@@ -57,20 +106,32 @@ function Register() {
         headers: { "Content-Type": "application/json" },
         mode: "no-cors",
       });
-      setFormData({
-        studentName: "",
-        parentName: "",
-        email: "",
-        phone: "",
-        school: "",
-        grade: "",
-        interests: [],
-        message: "",
-      });
+
       setFormStatus({ submitting: false, submitted: true, error: null });
+
+      // Calculate the amount based on course selection and type
+      let amount = 0;
+      const selectedCourse = courseData.find(
+        (course) => course.name === formData.course
+      );
+      if (selectedCourse) {
+        amount =
+          formData.courseType === "Per Session"
+            ? selectedCourse.perSessionValueRaw
+            : selectedCourse.fullCourseValueRaw;
+      }
+
+      // Navigate to payment page with form data
       setTimeout(() => {
-        setFormStatus((prev) => ({ ...prev, submitted: false }));
-      }, 5000);
+        navigate("/payment", {
+          state: {
+            studentName: formData.studentName,
+            course: formData.course,
+            courseType: formData.courseType,
+            amount: amount,
+          },
+        });
+      }, 2000);
     } catch (error) {
       setFormStatus({
         submitting: false,
@@ -79,6 +140,7 @@ function Register() {
       });
     }
   };
+
   const techInterests = [
     "Coding/Programming",
     "Game Development",
@@ -88,6 +150,7 @@ function Register() {
     "Digital Art",
     "3D Printing",
   ];
+
   return (
     <section className="py-16 bg-white">
       <div className="container mx-auto px-4">
@@ -102,8 +165,7 @@ function Register() {
                 Registration Successful!
               </h3>
               <p className="text-gray-600">
-                Thank you for registering. We'll contact you soon with more
-                information.
+                Thank you for registering. Redirecting to payment page...
               </p>
             </div>
           ) : (
@@ -220,6 +282,73 @@ function Register() {
                   </select>
                 </div>
               </div>
+
+              {/* Course Selection and Type Fields */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                <div>
+                  <label
+                    htmlFor="course"
+                    className="block text-gray-700 font-medium mb-2"
+                  >
+                    Select Course*
+                  </label>
+                  <select
+                    id="course"
+                    name="course"
+                    value={formData.course}
+                    onChange={handleChange}
+                    required
+                    className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500"
+                  >
+                    <option value="">Select a Course</option>
+                    {courseData.map((course, index) => (
+                      <option key={index} value={course.name}>
+                        {course.name}
+                      </option>
+                    ))}
+                  </select>
+                </div>
+                <div>
+                  <label
+                    htmlFor="courseType"
+                    className="block text-gray-700 font-medium mb-2"
+                  >
+                    Course Type*
+                  </label>
+                  <select
+                    id="courseType"
+                    name="courseType"
+                    value={formData.courseType}
+                    onChange={handleChange}
+                    required
+                    className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500"
+                  >
+                    <option value="">Select Type</option>
+                    <option value="Per Session">Single Session</option>
+                    <option value="Full Course">Full Course</option>
+                  </select>
+                </div>
+              </div>
+
+              {/* Price Display */}
+              {formData.course && formData.courseType && (
+                <div className="mb-6 p-4 bg-green-50 border-l-4 border-green-500 rounded">
+                  <p className="text-green-700 font-medium">
+                    Selected Course: {formData.course} - {formData.courseType}
+                  </p>
+                  <p className="text-green-700">
+                    Price:{" "}
+                    {formData.courseType === "Per Session"
+                      ? courseData.find(
+                          (course) => course.name === formData.course
+                        )?.perSession
+                      : courseData.find(
+                          (course) => course.name === formData.course
+                        )?.fullCourse}
+                  </p>
+                </div>
+              )}
+
               <div className="mb-6">
                 <label className="block text-gray-700 font-medium mb-2">
                   Tech Interests (select all that apply)
