@@ -10,44 +10,133 @@ import "./index.css";
 import logo from "../assets/logo.png";
 
 function Navbar() {
+  const [mobileMenuOpen, setMobileMenuOpen] = React.useState(false);
+  const [activeLink, setActiveLink] = React.useState("/");
+
+  React.useEffect(() => {
+    setActiveLink(window.location.pathname);
+  }, []);
+
   return (
-    <header className="bg-green-600 text-white shadow-md">
-      <div className="container mx-auto px-4 py-6 flex justify-between items-center">
-        <Link
-          to="/"
-          className="flex items-center space-x-2 hover:opacity-90 transition-opacity"
-        >
-          <img
-            src={logo}
-            alt="Tech Sprouts Logo"
-            className="h-8 w-8 rounded-full bg-white p-1"
-          />
-          <span className="text-2xl font-bold">Tech Sprouts</span>
-        </Link>
-        <nav>
-          <ul className="flex space-x-6">
-            <li>
-              <Link to="/" className="hover:underline">
-                Home
-              </Link>
-            </li>
-            <li>
-              <Link to="/courses" className="hover:underline">
-                Courses
-              </Link>
-            </li>
-            <li>
-              <Link to="/register" className="hover:underline">
-                Register
-              </Link>
-            </li>
-            <li>
-              <Link to="/contact" className="hover:underline">
-                Contact
-              </Link>
-            </li>
-          </ul>
-        </nav>
+    <header className="bg-white shadow-lg sticky top-0 z-50">
+      <div className="container mx-auto px-4 py-3">
+        <div className="flex justify-between items-center">
+          {/* Logo and brand */}
+          <Link
+            to="/"
+            className="flex items-center space-x-2 hover:opacity-90 transition-opacity"
+            onClick={() => setActiveLink("/")}
+          >
+            <div className="relative">
+              <div className="absolute inset-0 bg-green-500 rounded-full blur-sm opacity-30 animate-pulse"></div>
+              <img
+                src={logo}
+                alt="Tech Sprouts Logo"
+                className="h-10 w-10 rounded-full bg-white p-1 border-2 border-green-500 relative z-10"
+              />
+            </div>
+            <div className="flex flex-col">
+              <span className="text-lg font-bold text-gray-800 leading-tight">
+                Tech Sprouts
+              </span>
+              <span className="text-xs text-green-600 font-medium -mt-1">
+                Learn. Create. Innovate.
+              </span>
+            </div>
+          </Link>
+
+          {/* Desktop Navigation */}
+          <nav className="hidden md:block">
+            <ul className="flex items-center space-x-1">
+              {[
+                { path: "/", label: "Home" },
+                { path: "/courses", label: "Courses" },
+                { path: "/register", label: "Register" },
+                { path: "/contact", label: "Contact" },
+              ].map((item) => (
+                <li key={item.path}>
+                  <Link
+                    to={item.path}
+                    className={`px-4 py-2 rounded-full font-medium transition-all duration-200 inline-flex items-center ${
+                      activeLink === item.path
+                        ? "bg-green-100 text-green-700"
+                        : "text-gray-600 hover:bg-gray-100"
+                    }`}
+                    onClick={() => setActiveLink(item.path)}
+                  >
+                    {item.label}
+                  </Link>
+                </li>
+              ))}
+              <li>
+                <a
+                  href="https://chat.whatsapp.com/J75hEOoDJIzGALTMxFo4Pk"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="ml-2 bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-full shadow-sm transition-all duration-200 inline-flex items-center"
+                >
+                  <i className="fab fa-whatsapp mr-2"></i>
+                  Join Group
+                </a>
+              </li>
+            </ul>
+          </nav>
+
+          {/* Mobile menu button */}
+          <button
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            className="md:hidden text-gray-600 hover:text-green-600 focus:outline-none"
+            aria-label="Toggle menu"
+          >
+            {mobileMenuOpen ? (
+              <i className="fas fa-times text-xl"></i>
+            ) : (
+              <i className="fas fa-bars text-xl"></i>
+            )}
+          </button>
+        </div>
+
+        {/* Mobile Navigation */}
+        {mobileMenuOpen && (
+          <nav className="md:hidden pt-4 pb-3 border-t mt-3">
+            <ul className="space-y-2">
+              {[
+                { path: "/", label: "Home" },
+                { path: "/courses", label: "Courses" },
+                { path: "/register", label: "Register" },
+                { path: "/contact", label: "Contact" },
+              ].map((item) => (
+                <li key={item.path}>
+                  <Link
+                    to={item.path}
+                    className={`block px-4 py-2 rounded-lg font-medium ${
+                      activeLink === item.path
+                        ? "bg-green-100 text-green-700"
+                        : "text-gray-600 hover:bg-gray-100"
+                    }`}
+                    onClick={() => {
+                      setActiveLink(item.path);
+                      setMobileMenuOpen(false);
+                    }}
+                  >
+                    {item.label}
+                  </Link>
+                </li>
+              ))}
+              <li>
+                <a
+                  href="https://chat.whatsapp.com/J75hEOoDJIzGALTMxFo4Pk"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block px-4 py-2 bg-green-500 hover:bg-green-600 text-white rounded-lg shadow-sm transition-all duration-200 mt-3"
+                >
+                  <i className="fab fa-whatsapp mr-2"></i>
+                  Join Our WhatsApp Group
+                </a>
+              </li>
+            </ul>
+          </nav>
+        )}
       </div>
     </header>
   );
