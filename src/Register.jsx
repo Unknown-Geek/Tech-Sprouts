@@ -12,7 +12,6 @@ function Register() {
     phone: "",
     school: "",
     grade: "",
-    interests: [],
     course: "",
     courseType: "",
     message: "",
@@ -64,21 +63,8 @@ function Register() {
   });
 
   const handleChange = (e) => {
-    const { name, value, type, checked } = e.target;
-    if (type === "checkbox") {
-      setFormData((prev) => {
-        const interests = [...prev.interests];
-        if (checked) {
-          interests.push(value);
-        } else {
-          const index = interests.indexOf(value);
-          if (index > -1) interests.splice(index, 1);
-        }
-        return { ...prev, interests };
-      });
-    } else {
-      setFormData((prev) => ({ ...prev, [name]: value }));
-    }
+    const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
   const handleSubmit = async (e) => {
@@ -94,7 +80,6 @@ function Register() {
         Grade: formData.grade,
         Course: formData.course,
         "Course Type": formData.courseType,
-        Interests: formData.interests.join(", "),
         Message: formData.message,
         Timestamp: new Date().toISOString(),
       };
@@ -140,16 +125,6 @@ function Register() {
       });
     }
   };
-
-  const techInterests = [
-    "Coding/Programming",
-    "Game Development",
-    "Robotics",
-    "Web Design",
-    "App Development",
-    "Digital Art",
-    "3D Printing",
-  ];
 
   return (
     <section className="py-16 bg-white">
@@ -275,10 +250,14 @@ function Register() {
                     className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500"
                   >
                     <option value="">Select Grade</option>
-                    <option value="K-2">K-2</option>
-                    <option value="3-5">3-5</option>
-                    <option value="6-8">6-8</option>
-                    <option value="9-12">9-12</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                    <option value="11">11</option>
+                    <option value="12">12</option>
                   </select>
                 </div>
               </div>
@@ -349,32 +328,6 @@ function Register() {
                 </div>
               )}
 
-              <div className="mb-6">
-                <label className="block text-gray-700 font-medium mb-2">
-                  Tech Interests (select all that apply)
-                </label>
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-2">
-                  {techInterests.map((interest) => (
-                    <div key={interest} className="flex items-center">
-                      <input
-                        type="checkbox"
-                        id={interest.replace(/\s+/g, "-").toLowerCase()}
-                        name="interests"
-                        value={interest}
-                        checked={formData.interests.includes(interest)}
-                        onChange={handleChange}
-                        className="h-4 w-4 text-green-600 focus:ring-green-500 border-gray-300 rounded"
-                      />
-                      <label
-                        htmlFor={interest.replace(/\s+/g, "-").toLowerCase()}
-                        className="ml-2 block text-sm text-gray-700"
-                      >
-                        {interest}
-                      </label>
-                    </div>
-                  ))}
-                </div>
-              </div>
               <div className="mb-6">
                 <label
                   htmlFor="message"
