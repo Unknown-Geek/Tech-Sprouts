@@ -70,7 +70,9 @@ function Register() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setFormStatus({ submitting: true, submitted: false, error: null });
+
     try {
+      // Format the data in the expected structure
       const formattedData = {
         "Student Name": formData.studentName,
         "Parent Name": formData.parentName,
@@ -81,24 +83,32 @@ function Register() {
         Course: formData.course,
         "Course Type": formData.courseType,
         Message: formData.message,
-        Timestamp: new Date().toISOString(),
       };
 
-      const scriptURL = import.meta.env.VITE_GOOGLE_SCRIPT_URL;
-      await fetch(scriptURL, {
+      console.log("Submitting data to Google Script:", formattedData);
+      console.log("Script URL:", import.meta.env.VITE_GOOGLE_SCRIPT_URL);
+
+      // Submit the data to Google Apps Script
+      const response = await fetch(import.meta.env.VITE_GOOGLE_SCRIPT_URL, {
         method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
         body: JSON.stringify(formattedData),
-        headers: { "Content-Type": "application/json" },
-        mode: "no-cors",
+        mode: "no-cors", // Required for cross-origin requests to Google Apps Script
       });
 
+      console.log("Form submitted with response type:", response.type);
+
+      // With no-cors, we can't read the response, so we assume success if no error is thrown
       setFormStatus({ submitting: false, submitted: true, error: null });
 
-      // Calculate the amount based on course selection and type
+      // Calculate the payment amount
       let amount = 0;
       const selectedCourse = courseData.find(
         (course) => course.name === formData.course
       );
+
       if (selectedCourse) {
         amount =
           formData.courseType === "Per Session"
@@ -106,7 +116,7 @@ function Register() {
             : selectedCourse.fullCourseValueRaw;
       }
 
-      // Navigate to payment page with form data
+      // Navigate to payment page after a brief delay
       setTimeout(() => {
         navigate("/payment", {
           state: {
@@ -118,10 +128,11 @@ function Register() {
         });
       }, 2000);
     } catch (error) {
+      console.error("Form submission error:", error);
       setFormStatus({
         submitting: false,
         submitted: false,
-        error: "Failed to submit form. Please try again.",
+        error: "Failed to submit form. Please try again or contact support.",
       });
     }
   };
