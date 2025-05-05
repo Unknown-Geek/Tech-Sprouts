@@ -1,10 +1,11 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { CheckCircle } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import "./index.css";
 
 function Register() {
   const navigate = useNavigate();
+  const formContainerRef = useRef(null);
   const [formData, setFormData] = useState({
     studentName: "",
     parentName: "",
@@ -68,6 +69,22 @@ function Register() {
     submitted: false,
     error: null,
   });
+
+  // Effect to scroll to top of form container when submission is successful
+  useEffect(() => {
+    if (formStatus.submitted && formContainerRef.current) {
+      // Calculate the scroll position to place the element 200px below the navbar
+      const yOffset = -200;
+      const element = formContainerRef.current;
+      const y =
+        element.getBoundingClientRect().top + window.pageYOffset + yOffset;
+
+      window.scrollTo({
+        top: y,
+        behavior: "smooth",
+      });
+    }
+  }, [formStatus.submitted]);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -150,7 +167,10 @@ function Register() {
         <h2 className="text-3xl font-bold text-center mb-8">
           Student Registration
         </h2>
-        <div className="max-w-3xl mx-auto bg-gray-50 p-8 rounded-lg shadow-md">
+        <div
+          ref={formContainerRef}
+          className="max-w-3xl mx-auto bg-gray-50 p-8 rounded-lg shadow-md"
+        >
           {formStatus.submitted ? (
             <div className="text-center py-8">
               <CheckCircle className="h-16 w-16 text-green-500 mx-auto mb-4" />
