@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 
 function Payment() {
@@ -6,6 +6,7 @@ function Payment() {
   const navigate = useNavigate();
   const { studentName, course, courseType, amount } = location.state || {};
   const paymentContainerRef = useRef(null);
+  const [isHelpExpanded, setIsHelpExpanded] = useState(false);
 
   // Get the appropriate payment button ID based on course and type
   const getPaymentButtonId = (course, type) => {
@@ -177,27 +178,58 @@ function Payment() {
           </div>
         </div>
 
-        {/* Course-specific fallback information */}
-        <div className="mt-8 p-6 bg-white rounded-lg shadow-lg">
-          <h3 className="text-xl font-semibold text-center mb-4">
-            Having Trouble with Payment?
-          </h3>
-          <p className="text-gray-600 mb-6 text-center">
-            If you're experiencing any issues with the payment process, please
-            contact us:
-          </p>
+        {/* Course-specific fallback information - Collapsible */}
+        <div className="mt-8 bg-white rounded-lg shadow-lg overflow-hidden">
+          <button
+            onClick={() => setIsHelpExpanded(!isHelpExpanded)}
+            className="w-full flex items-center justify-between p-4 text-left font-semibold text-lg text-gray-700 hover:bg-gray-50 transition-colors"
+          >
+            <span>Having Trouble with Payment?</span>
+            <svg
+              className={`w-5 h-5 transition-transform duration-200 ${
+                isHelpExpanded ? "transform rotate-180" : ""
+              }`}
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M19 9l-7 7-7-7"
+              ></path>
+            </svg>
+          </button>
 
-          <div className="flex flex-col items-center justify-center space-y-3">
-            <p className="text-gray-800">
-              <strong>Email:</strong> techsproutsorg@gmail.com
-            </p>
-            <p className="text-gray-800">
-              <strong>Phone:</strong> +91 7025535227
-            </p>
-            <p className="text-sm text-gray-600 max-w-md text-center mt-2">
-              Please mention your selected course ({course} - {courseType}) in
-              your communication.
-            </p>
+          {/* Collapsible content */}
+          <div
+            className={`overflow-hidden transition-all duration-500 ease-in-out ${
+              isHelpExpanded
+                ? "max-h-96 opacity-100 py-2"
+                : "max-h-0 opacity-0 py-0"
+            }`}
+          >
+            <div className="p-6 border-t border-gray-100">
+              <p className="text-gray-600 mb-6 text-center">
+                If you're experiencing any issues with the payment process,
+                please contact us:
+              </p>
+
+              <div className="flex flex-col items-center justify-center space-y-3">
+                <p className="text-gray-800">
+                  <strong>Email:</strong> techsproutsorg@gmail.com
+                </p>
+                <p className="text-gray-800">
+                  <strong>Phone:</strong> +91 7025535227
+                </p>
+                <p className="text-sm text-gray-600 max-w-md text-center mt-2">
+                  Please mention your selected course ({course} - {courseType})
+                  in your communication.
+                </p>
+              </div>
+            </div>
           </div>
         </div>
 
