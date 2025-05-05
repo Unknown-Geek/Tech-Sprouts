@@ -54,6 +54,13 @@ function Register() {
       perSessionValueRaw: 79,
       fullCourseValueRaw: 199,
     },
+    {
+      name: "Canva",
+      perSession: "₹ 99",
+      fullCourse: "₹ 249",
+      perSessionValueRaw: 99,
+      fullCourseValueRaw: 249,
+    },
   ];
 
   const [formStatus, setFormStatus] = useState({

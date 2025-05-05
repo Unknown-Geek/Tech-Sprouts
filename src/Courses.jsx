@@ -52,6 +52,16 @@ function Courses() {
       borderColor: "border-green-400",
       iconClass: "fab fa-google text-green-500",
     },
+    {
+      name: "Canva",
+      perSession: "₹ 99",
+      fullCourse: "₹ 249",
+      description:
+        "Create beautiful designs, presentations, and graphics with this popular design platform.",
+      bgColor: "bg-pink-100",
+      borderColor: "border-pink-400",
+      iconClass: "fas fa-paint-brush text-pink-500",
+    },
   ];
 
   // Session content details

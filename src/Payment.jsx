@@ -31,6 +31,10 @@ function Payment() {
         "Per Session": "pl_QRJJcSBctlurg9", // 79 rupees
         "Full Course": "pl_QRJPh4EYEXRdYu", // 199 rupees
       },
+      Canva: {
+        "Per Session": "pl_QRJ9E0i7MAVHio", // 99 rupees
+        "Full Course": "pl_QRJFa1EL2YJ1DC", // 249 rupees
+      },
     };
 
     // Return the specific button ID or the default one

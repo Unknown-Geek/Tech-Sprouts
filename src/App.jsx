@@ -220,6 +220,7 @@ function App() {
                   <li>Wix</li>
                   <li>HTML</li>
                   <li>Google Sites</li>
+                  <li>Canva</li>
                 </ul>
               </div>
               <div>
