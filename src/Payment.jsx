@@ -12,29 +12,29 @@ function Payment() {
     // Map of course+type combinations to their specific Razorpay button IDs
     const buttonIds = {
       "BASICS Scratch": {
-        "Per Session": "pl_QRJ9E0i7MAVHio", // Replace with actual ID for this course+type
-        "Full Course": "pl_QRJFa1EL2YJ1DC", // Replace with actual ID for this course+type
+        "Per Session": "pl_QRJ9E0i7MAVHio", // 99 rupees
+        "Full Course": "pl_QRJFa1EL2YJ1DC", // 249 rupees
       },
       "MIT App Inventor": {
-        "Per Session": "pl_QRJJcSBctlurg9", // Replace with actual ID for this course+type
-        "Full Course": "pl_QRJPh4EYEXRdYu", // Replace with actual ID for this course+type
+        "Per Session": "pl_QRJJcSBctlurg9", // 79 rupees
+        "Full Course": "pl_QRJPh4EYEXRdYu", // 199 rupees
       },
-      "Wix": {
-        "Per Session": "pl_QRJ9E0i7MAVHio", // Replace with actual ID for this course+type
-        "Full Course": "pl_QRJFa1EL2YJ1DC", // Replace with actual ID for this course+type
+      Wix: {
+        "Per Session": "pl_QRJ9E0i7MAVHio", // 99 rupees
+        "Full Course": "pl_QRJFa1EL2YJ1DC", // 249 rupees
       },
-      "HTML": {
-        "Per Session": "pl_QRJ9E0i7MAVHio", // Replace with actual ID for this course+type
-        "Full Course": "pl_QRJFa1EL2YJ1DC", // Replace with actual ID for this course+type
+      HTML: {
+        "Per Session": "pl_QRJ9E0i7MAVHio", // 99 rupees
+        "Full Course": "pl_QRJFa1EL2YJ1DC", // 249 rupees
       },
       "Google Sites": {
-        "Per Session": "pl_QRJJcSBctlurg9", // Replace with actual ID for this course+type
-        "Full Course": "pl_QRJPh4EYEXRdYu", // Replace with actual ID for this course+type
+        "Per Session": "pl_QRJJcSBctlurg9", // 79 rupees
+        "Full Course": "pl_QRJPh4EYEXRdYu", // 199 rupees
       },
     };
 
     // Return the specific button ID or the default one
-    return buttonIds[course]?.[type] || "pl_QIzmydW5EraZk2";
+    return buttonIds[course]?.[type] || "pl_QRJJcSBctlurg9";
   };
 
   // Load Razorpay script and handle payment buttons

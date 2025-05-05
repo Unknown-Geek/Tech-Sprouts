@@ -4,8 +4,8 @@ function Courses() {
   const courseData = [
     {
       name: "BASICS Scratch",
-      perSession: "₹ 50",
-      fullCourse: "₹ 120",
+      perSession: "₹ 99",
+      fullCourse: "₹ 249",
       description:
         "Learn programming fundamentals through block-based coding with Scratch.",
       bgColor: "bg-yellow-100",
@@ -14,8 +14,8 @@ function Courses() {
     },
     {
       name: "MIT App Inventor",
-      perSession: "₹ 50",
-      fullCourse: "₹ 120",
+      perSession: "₹ 79",
+      fullCourse: "₹ 199",
       description:
         "Create your own mobile apps with this block-based programming platform.",
       bgColor: "bg-blue-100",
@@ -24,8 +24,8 @@ function Courses() {
     },
     {
       name: "Wix",
-      perSession: "₹ 50",
-      fullCourse: "₹ 120",
+      perSession: "₹ 99",
+      fullCourse: "₹ 249",
       description:
         "Build professional websites with this intuitive drag-and-drop platform.",
       bgColor: "bg-purple-100",
@@ -34,8 +34,8 @@ function Courses() {
     },
     {
       name: "HTML",
-      perSession: "₹ 40",
-      fullCourse: "₹ 90",
+      perSession: "₹ 99",
+      fullCourse: "₹ 249",
       description:
         "Learn the foundation of all web development with HTML markup language.",
       bgColor: "bg-orange-100",
@@ -44,8 +44,8 @@ function Courses() {
     },
     {
       name: "Google Sites",
-      perSession: "₹ 40",
-      fullCourse: "₹ 90",
+      perSession: "₹ 79",
+      fullCourse: "₹ 199",
       description:
         "Create websites easily with Google's website building tool.",
       bgColor: "bg-green-100",
