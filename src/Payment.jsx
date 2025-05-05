@@ -12,24 +12,24 @@ function Payment() {
     // Map of course+type combinations to their specific Razorpay button IDs
     const buttonIds = {
       "BASICS Scratch": {
-        "Per Session": "pl_QIzmydW5EraZk2", // Replace with actual ID for this course+type
-        "Full Course": "pl_QJNkUNPH8hARvQ", // Replace with actual ID for this course+type
+        "Per Session": "pl_QRJ9E0i7MAVHio", // Replace with actual ID for this course+type
+        "Full Course": "pl_QRJFa1EL2YJ1DC", // Replace with actual ID for this course+type
       },
       "MIT App Inventor": {
-        "Per Session": "pl_QIzmydW5EraZk2", // Replace with actual ID for this course+type
-        "Full Course": "pl_QJNkUNPH8hARvQ", // Replace with actual ID for this course+type
+        "Per Session": "pl_QRJJcSBctlurg9", // Replace with actual ID for this course+type
+        "Full Course": "pl_QRJPh4EYEXRdYu", // Replace with actual ID for this course+type
       },
       "Wix": {
-        "Per Session": "pl_QIzmydW5EraZk2", // Replace with actual ID for this course+type
-        "Full Course": "pl_QJNkUNPH8hARvQ", // Replace with actual ID for this course+type
+        "Per Session": "pl_QRJ9E0i7MAVHio", // Replace with actual ID for this course+type
+        "Full Course": "pl_QRJFa1EL2YJ1DC", // Replace with actual ID for this course+type
       },
       "HTML": {
-        "Per Session": "pl_QJNgf0QmGdN482", // Replace with actual ID for this course+type
-        "Full Course": "pl_QJNj8sGVVdLFvB", // Replace with actual ID for this course+type
+        "Per Session": "pl_QRJ9E0i7MAVHio", // Replace with actual ID for this course+type
+        "Full Course": "pl_QRJFa1EL2YJ1DC", // Replace with actual ID for this course+type
       },
       "Google Sites": {
-        "Per Session": "pl_QJNgf0QmGdN482", // Replace with actual ID for this course+type
-        "Full Course": "pl_QJNj8sGVVdLFvB", // Replace with actual ID for this course+type
+        "Per Session": "pl_QRJJcSBctlurg9", // Replace with actual ID for this course+type
+        "Full Course": "pl_QRJPh4EYEXRdYu", // Replace with actual ID for this course+type
       },
     };
 
