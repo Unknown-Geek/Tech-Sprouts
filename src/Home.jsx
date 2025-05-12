@@ -4,6 +4,7 @@ import logo from "../assets/logo.png";
 import image1 from "../assets/1.jpeg";
 import image2 from "../assets/2.jpeg";
 import image3 from "../assets/3.jpeg";
+import LoadingExample from "./LoadingExample";
 
 function Home() {
   const navigate = useNavigate();
@@ -43,6 +44,13 @@ function Home() {
             Join WhatsApp Group
           </a>
         </div>
+      </section>
+
+      <section className="mb-16">
+        <h2 className="text-3xl font-bold text-green-700 mb-6 text-center">
+          UPCOMING COURSES
+        </h2>
+        <LoadingExample />
       </section>
 
       {/* Why Choose Us Section */}

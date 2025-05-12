@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import {
   BrowserRouter as Router,
   Routes,
@@ -11,6 +11,7 @@ import Courses from "./Courses";
 import Register from "./Register";
 import Contact from "./Contact";
 import Payment from "./Payment";
+import Loader from "./Loader";
 import "./index.css";
 import logo from "../assets/logo.png";
 import { useTheme } from "./ThemeContext";
@@ -166,6 +167,20 @@ function Navbar() {
 function App() {
   // We'll still use useTheme() but ignore the darkMode part
   const { darkMode } = useTheme();
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    // Simulate loading time
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 2000);
+    
+    return () => clearTimeout(timer);
+  }, []);
+
+  if (loading) {
+    return <Loader />;
+  }
 
   return (
     <Router>
