@@ -100,11 +100,11 @@ function Payment() {
   return (
     <div className="container mx-auto px-4 py-16">
       <div className="max-w-3xl mx-auto">
-        <h1 className="text-3xl font-bold text-green-700 mb-8 text-center">
+        <h1 className="text-3xl font-bold text-green-700 mb-8 text-center card-animate">
           Complete Your Payment
         </h1>
 
-        <div className="bg-white rounded-lg shadow-lg overflow-hidden">
+        <div className="bg-white rounded-lg shadow-lg overflow-hidden card-animate">
           {/* Student and Course Details */}
           <div className="bg-green-50 p-6 border-b border-green-100">
             <h2 className="text-xl font-semibold text-green-800 mb-4">

@@ -16,6 +16,8 @@ import "./index.css";
 import logo from "../assets/logo.png";
 import { useTheme } from "./ThemeContext";
 import HamburgerIcon from "./HamburgerIcon";
+import { CSSTransition, TransitionGroup } from "react-transition-group";
+import "./transitions.css";
 
 // ScrollToTop component that scrolls to the top when navigating to a new page
 function ScrollToTop() {
@@ -183,11 +185,7 @@ function App() {
         <Navbar />
         <main className="min-h-screen bg-gray-100 text-gray-900 transition-colors duration-300">
           <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/courses" element={<Courses />} />
-            <Route path="/register" element={<Register />} />
-            <Route path="/contact" element={<Contact />} />
-            <Route path="/payment" element={<Payment />} />
+            <Route path="*" element={<PageTransitionWrapper />} />
           </Routes>
         </main>
         <footer className="bg-gray-800 text-white py-8 mt-8 transition-colors duration-300">
@@ -350,6 +348,24 @@ function App() {
         </footer>
       </div>
     </Router>
+  );
+}
+
+// PageTransitionWrapper for route transitions
+function PageTransitionWrapper() {
+  const location = useLocation();
+  return (
+    <TransitionGroup component={null}>
+      <CSSTransition key={location.pathname} classNames="page" timeout={400}>
+        <Routes location={location}>
+          <Route path="/" element={<Home />} />
+          <Route path="/courses" element={<Courses />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/payment" element={<Payment />} />
+        </Routes>
+      </CSSTransition>
+    </TransitionGroup>
   );
 }
 

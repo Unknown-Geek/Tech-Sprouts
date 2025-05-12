@@ -3,17 +3,19 @@ import React from "react";
 function Contact() {
   return (
     <div className="container mx-auto px-4 py-8">
-      <h1 className="text-3xl font-bold text-green-700 mb-6">Contact Us</h1>
-      <p className="text-gray-700 mb-4">
+      <h1 className="text-3xl font-bold text-green-700 mb-6 card-animate">
+        Contact Us
+      </h1>
+      <p className="text-gray-700 mb-4 card-animate">
         Have questions? Reach out to us using the information below or fill out
         the contact form.
       </p>
-      <ul className="mb-4 text-gray-600">
+      <ul className="mb-4 text-gray-600 card-animate">
         <li>Email: techsproutsorg@gmail.com</li>
         <li>Phone: +91 7025535227</li>
         <li>Address: College of EngineeringTrivandrum, Sreekaryam</li>
       </ul>
-      <div className="max-w-xl mx-auto bg-gray-50 p-6 rounded-lg shadow-md mt-8">
+      <div className="max-w-xl mx-auto bg-gray-50 p-6 rounded-lg shadow-md mt-8 card-animate">
         <form
           action="https://formspree.io/f/xblgbqdy"
           method="POST"

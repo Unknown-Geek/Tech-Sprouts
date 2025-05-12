@@ -88,10 +88,10 @@ function Courses() {
 
   return (
     <div className="container mx-auto px-4 py-8">
-      <h1 className="text-4xl font-bold text-green-700 mb-2 text-center">
+      <h1 className="text-4xl font-bold text-green-700 mb-2 text-center card-animate">
         Our Courses
       </h1>
-      <p className="text-gray-700 mb-8 text-center max-w-3xl mx-auto">
+      <p className="text-gray-700 mb-8 text-center max-w-3xl mx-auto card-animate">
         Explore our range of tech courses designed specifically for young
         learners. Each course is crafted to make learning fun and engaging while
         building valuable skills for the future.
@@ -101,7 +101,8 @@ function Courses() {
         {courseData.map((course, index) => (
           <div
             key={index}
-            className={`rounded-lg shadow-lg overflow-hidden border-t-4 ${course.borderColor} ${course.bgColor} transition-transform duration-300 hover:scale-105`}
+            className={`rounded-lg shadow-lg overflow-hidden border-t-4 ${course.borderColor} ${course.bgColor} transition-transform duration-300 hover:scale-105 card-animate`}
+            style={{ animationDelay: `${index * 0.08}s` }}
           >
             <div className="p-6">
               <div className="flex items-center mb-4">

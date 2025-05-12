@@ -164,12 +164,12 @@ function Register() {
   return (
     <section className="py-16 bg-white">
       <div className="container mx-auto px-4">
-        <h2 className="text-3xl font-bold text-center mb-8">
+        <h2 className="text-3xl font-bold text-center mb-8 card-animate">
           Student Registration
         </h2>
         <div
           ref={formContainerRef}
-          className="max-w-3xl mx-auto bg-gray-50 p-8 rounded-lg shadow-md"
+          className="max-w-3xl mx-auto bg-gray-50 p-8 rounded-lg shadow-md card-animate"
         >
           {formStatus.submitted ? (
             <div className="text-center py-8">

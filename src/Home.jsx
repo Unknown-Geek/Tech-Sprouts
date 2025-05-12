@@ -13,10 +13,10 @@ function Home() {
         <img
           src={logo}
           alt="Tech Sprouts Logo"
-          className="h-20 w-20 rounded-full bg-white p-2 "
+          className="h-20 w-20 rounded-full bg-white border-2 border-green-500 relative z-10 p-2 card-animate"
         />
       </div>
-      <section className="text-center mb-12">
+      <section className="text-center mb-12 card-animate">
         <h1 className="text-4xl font-bold text-green-700 mb-4">
           Welcome to Tech Sprouts
         </h1>
@@ -28,7 +28,7 @@ function Home() {
         </p>
         <div className="flex flex-wrap justify-center gap-4">
           <button
-            className="bg-green-600 text-white px-8 py-3 rounded-md hover:bg-green-700 transition"
+            className="bg-green-600 text-white px-8 py-3 rounded-md hover:bg-green-700 transition card-animate"
             onClick={() => navigate("/register")}
           >
             Register Now
@@ -37,7 +37,7 @@ function Home() {
             href="https://chat.whatsapp.com/J75hEOoDJIzGALTMxFo4Pk"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center bg-green-500 text-white px-8 py-3 rounded-md hover:bg-green-600 transition"
+            className="flex items-center bg-green-500 text-white px-8 py-3 rounded-md hover:bg-green-600 transition card-animate"
           >
             <i className="fab fa-whatsapp text-xl mr-2"></i>
             Join WhatsApp Group
