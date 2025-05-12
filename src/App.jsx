@@ -211,6 +211,26 @@ function App() {
                     Join Our WhatsApp Group
                   </a>
                 </div>
+                <div className="mt-4 flex space-x-4">
+                  <a
+                    href="https://www.linkedin.com/company/tech-sprouts/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-gray-400 hover:text-blue-400 transition-colors"
+                    aria-label="LinkedIn"
+                  >
+                    <i className="fab fa-linkedin text-2xl"></i>
+                  </a>
+                  <a
+                    href="https://www.instagram.com/tech_sprouts?igsh=YXZzdGRseXVocGJh"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-gray-400 hover:text-pink-400 transition-colors"
+                    aria-label="Instagram"
+                  >
+                    <i className="fab fa-instagram text-2xl"></i>
+                  </a>
+                </div>
               </div>
               <div>
                 <h4 className="font-semibold mb-4">Our Courses</h4>
@@ -283,6 +303,35 @@ function App() {
                 &copy; {new Date().getFullYear()} Tech Sprouts. All rights
                 reserved.
               </p>
+              <div className="flex justify-center space-x-6 my-4">
+                <a
+                  href="https://www.linkedin.com/company/tech-sprouts/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-gray-400 hover:text-blue-400 transition-colors"
+                  aria-label="LinkedIn"
+                >
+                  <i className="fab fa-linkedin text-xl"></i>
+                </a>
+                <a
+                  href="https://www.instagram.com/tech_sprouts?igsh=YXZzdGRseXVocGJh"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-gray-400 hover:text-pink-400 transition-colors"
+                  aria-label="Instagram"
+                >
+                  <i className="fab fa-instagram text-xl"></i>
+                </a>
+                <a
+                  href="https://chat.whatsapp.com/J75hEOoDJIzGALTMxFo4Pk"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-gray-400 hover:text-green-400 transition-colors"
+                  aria-label="WhatsApp"
+                >
+                  <i className="fab fa-whatsapp text-xl"></i>
+                </a>
+              </div>
               <p className="text-gray-500 text-sm mt-2">
                 Empowering students from Grade 5 to Grade 12 with technology
                 education.
