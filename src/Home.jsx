@@ -4,7 +4,6 @@ import logo from "../assets/logo.png";
 import image1 from "../assets/1.jpeg";
 import image2 from "../assets/2.jpeg";
 import image3 from "../assets/3.jpeg";
-import LoadingExample from "./LoadingExample";
 
 function Home() {
   const navigate = useNavigate();
@@ -23,9 +22,9 @@ function Home() {
         </h1>
         <p className="text-lg text-gray-700 mb-6 max-w-2xl mx-auto">
           Tech Sprouts is a student-led organization that helps school students
-          learn about technology in a fun way. We make learning easy and exciting
-          through creative and hands-on sessions. Our goal is to make tech simple
-          and exciting for all.
+          learn about technology in a fun way. We make learning easy and
+          exciting through creative and hands-on sessions. Our goal is to make
+          tech simple and exciting for all.
         </p>
         <div className="flex flex-wrap justify-center gap-4">
           <button
@@ -44,13 +43,6 @@ function Home() {
             Join WhatsApp Group
           </a>
         </div>
-      </section>
-
-      <section className="mb-16">
-        <h2 className="text-3xl font-bold text-green-700 mb-6 text-center">
-          UPCOMING COURSES
-        </h2>
-        <LoadingExample />
       </section>
 
       {/* Why Choose Us Section */}
