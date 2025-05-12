@@ -15,6 +15,7 @@ import Loader from "./Loader";
 import "./index.css";
 import logo from "../assets/logo.png";
 import { useTheme } from "./ThemeContext";
+import HamburgerIcon from "./HamburgerIcon";
 
 // ScrollToTop component that scrolls to the top when navigating to a new page
 function ScrollToTop() {
@@ -103,18 +104,11 @@ function Navbar() {
           </nav>
 
           <div className="md:hidden flex items-center">
-            {/* Mobile menu button */}
-            <button
-              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="focus:outline-none text-gray-600 hover:text-green-600"
-              aria-label="Toggle menu"
-            >
-              {mobileMenuOpen ? (
-                <i className="fas fa-times text-xl"></i>
-              ) : (
-                <i className="fas fa-bars text-xl"></i>
-              )}
-            </button>
+            {/* Mobile menu button - replaced with animated hamburger */}
+            <HamburgerIcon
+              isOpen={mobileMenuOpen}
+              toggle={() => setMobileMenuOpen(!mobileMenuOpen)}
+            />
           </div>
         </div>
 
@@ -174,7 +168,7 @@ function App() {
     const timer = setTimeout(() => {
       setLoading(false);
     }, 2000);
-    
+
     return () => clearTimeout(timer);
   }, []);
 

@@ -1,3 +1,21 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Prevent flashing during transitions */
+.app-container {
+  position: relative;
+  overflow-x: hidden;
+}
+
+.page-container {
+  position: relative;
+  z-index: 1;
+  transform: translateZ(0);
+  isolation: isolate;
+}
+
+/* Improve transition smoothness */
+html, body {
+  overscroll-behavior-y: none;
+}
