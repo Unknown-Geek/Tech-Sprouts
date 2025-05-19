@@ -94,12 +94,6 @@ yarn preview
 
 This project is licensed under the MIT License - see the LICENSE file for details.
 
-## 🙏 Acknowledgements
-
-- All our amazing student instructors
-- The schools and parents who support our mission
-- Open source community for the tools and resources
-
 ---
 
 <div align="center">

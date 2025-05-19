@@ -13,7 +13,7 @@ function Contact() {
       <ul className="mb-4 text-gray-600 card-animate">
         <li>Email: techsproutsorg@gmail.com</li>
         <li>Phone: +91 7025535227</li>
-        <li>Address: College of EngineeringTrivandrum, Sreekaryam</li>
+{/*         <li>Address: College of Engineering Trivandrum, Sreekaryam</li> */}
       </ul>
       <div className="max-w-xl mx-auto bg-gray-50 p-6 rounded-lg shadow-md mt-8 card-animate">
         <form
