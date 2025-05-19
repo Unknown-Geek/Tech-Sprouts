@@ -112,19 +112,33 @@ function Navbar() {
               toggle={() => setMobileMenuOpen(!mobileMenuOpen)}
             />
           </div>
-        </div>
-
-        {/* Mobile Navigation */}
-        {mobileMenuOpen && (
-          <nav className="md:hidden pt-4 pb-3 border-t mt-3 border-gray-200">
+        </div>{" "}
+        {/* Mobile Navigation */}{" "}
+        <div
+          className={`md:hidden mobile-menu-container ${
+            mobileMenuOpen ? "max-h-[400px] opacity-100" : "max-h-0 opacity-0"
+          }`}
+        >
+          <nav
+            className="pt-4 pb-3 border-t mt-3 border-gray-200 mobile-menu-content"
+            style={{
+              transform: mobileMenuOpen
+                ? "translateY(0) scale(1)"
+                : "translateY(-20px) scale(0.96)",
+              opacity: mobileMenuOpen ? 1 : 0,
+            }}
+          >
             <ul className="space-y-2">
               {[
                 { path: "/", label: "Home" },
                 { path: "/courses", label: "Courses" },
                 { path: "/register", label: "Register" },
                 { path: "/contact", label: "Contact" },
-              ].map((item) => (
-                <li key={item.path}>
+              ].map((item, index) => (
+                <li
+                  key={item.path}
+                  className={mobileMenuOpen ? "mobile-menu-item" : ""}
+                >
                   <Link
                     to={item.path}
                     className={`block px-4 py-2 rounded-lg font-medium ${
@@ -141,7 +155,7 @@ function Navbar() {
                   </Link>
                 </li>
               ))}
-              <li>
+              <li className={mobileMenuOpen ? "mobile-menu-item" : ""}>
                 <a
                   href="https://chat.whatsapp.com/J75hEOoDJIzGALTMxFo4Pk"
                   target="_blank"
@@ -154,7 +168,7 @@ function Navbar() {
               </li>
             </ul>
           </nav>
-        )}
+        </div>
       </div>
     </header>
   );
