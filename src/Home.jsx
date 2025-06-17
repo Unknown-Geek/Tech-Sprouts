@@ -7,6 +7,7 @@ import image3 from "../assets/3.jpeg";
 import ISL1 from "../assets/ISL_1.webp";
 import ISL2 from "../assets/ISL_2.webp";
 import ISL3 from "../assets/ISL_3.webp";
+import TiltedCard from "./TiltedCard";
 
 function Home() {
   const navigate = useNavigate();
@@ -90,26 +91,51 @@ function Home() {
           </div>{" "}
           {/* ISL Images Gallery */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div className="rounded-lg shadow-sm overflow-hidden">
-              <img
-                src={ISL1}
-                alt="Tech Sprouts at Indian Startup League 2025 - Presentation"
-                className="w-full h-60 object-cover object-center transform hover:scale-105 transition-transform duration-300"
-                style={{ objectPosition: "center 15%" }}
+            {" "}
+            <div className="flex justify-center">
+              <TiltedCard
+                imageSrc={ISL1}
+                altText="Tech Sprouts at Indian Startup League 2025 - Presentation"
+                captionText="ISL 2025 Presentation"
+                containerHeight="240px"
+                containerWidth="100%"
+                imageHeight="240px"
+                imageWidth="100%"
+                rotateAmplitude={8}
+                scaleOnHover={1.05}
+                showTooltip={true}
+                className="w-full"
+                imageStyle={{ objectPosition: "center 15%" }}
               />
             </div>
-            <div className="rounded-lg shadow-sm overflow-hidden">
-              <img
-                src={ISL2}
-                alt="Tech Sprouts at Indian Startup League 2025 - Team"
-                className="w-full h-60 object-cover transform hover:scale-105 transition-transform duration-300"
+            <div className="flex justify-center">
+              <TiltedCard
+                imageSrc={ISL2}
+                altText="Tech Sprouts at Indian Startup League 2025 - Team"
+                captionText="Our Team at ISL 2025"
+                containerHeight="240px"
+                containerWidth="100%"
+                imageHeight="240px"
+                imageWidth="100%"
+                rotateAmplitude={8}
+                scaleOnHover={1.05}
+                showTooltip={true}
+                className="w-full"
               />
             </div>
-            <div className="rounded-lg shadow-sm overflow-hidden">
-              <img
-                src={ISL3}
-                alt="Tech Sprouts at Indian Startup League 2025 - Event"
-                className="w-full h-60 object-cover transform hover:scale-105 transition-transform duration-300"
+            <div className="flex justify-center">
+              <TiltedCard
+                imageSrc={ISL3}
+                altText="Tech Sprouts at Indian Startup League 2025 - Event"
+                captionText="ISL 2025 Event"
+                containerHeight="240px"
+                containerWidth="100%"
+                imageHeight="240px"
+                imageWidth="100%"
+                rotateAmplitude={8}
+                scaleOnHover={1.05}
+                showTooltip={true}
+                className="w-full"
               />
             </div>
           </div>
@@ -148,27 +174,63 @@ function Home() {
             instructors guide students through hands-on projects, collaborative
             learning, and real-world problem solving.
           </p>
-        </div>
+        </div>{" "}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <div className="bg-gray-200 h-64 flex items-center justify-center rounded-lg overflow-hidden shadow-md">
-            <img
-              src={image1}
-              alt="Tech Sprouts Activity"
-              className="w-full h-full object-cover transform hover:scale-105 transition-transform duration-300"
+          <div className="flex justify-center">
+            <TiltedCard
+              imageSrc={image1}
+              altText="Tech Sprouts Activity - Students Learning"
+              captionText="Students Learning Tech"
+              containerHeight="256px"
+              containerWidth="100%"
+              imageHeight="256px"
+              imageWidth="100%"
+              rotateAmplitude={8}
+              scaleOnHover={1.08}
+              showTooltip={true}
+              displayOverlayContent={true}
+              overlayContent={
+                <p className="text-white font-semibold">Hands-on Learning</p>
+              }
+              className="w-full"
             />
           </div>
-          <div className="bg-gray-200 h-64 flex items-center justify-center rounded-lg overflow-hidden shadow-md">
-            <img
-              src={image2}
-              alt="Tech Sprouts Activity"
-              className="w-full h-full object-cover transform hover:scale-105 transition-transform duration-300"
+          <div className="flex justify-center">
+            <TiltedCard
+              imageSrc={image2}
+              altText="Tech Sprouts Activity - Creative Projects"
+              captionText="Creative Tech Projects"
+              containerHeight="256px"
+              containerWidth="100%"
+              imageHeight="256px"
+              imageWidth="100%"
+              rotateAmplitude={8}
+              scaleOnHover={1.08}
+              showTooltip={true}
+              displayOverlayContent={true}
+              overlayContent={
+                <p className="text-white font-semibold">Creative Projects</p>
+              }
+              className="w-full"
             />
           </div>
-          <div className="bg-gray-200 h-64 flex items-center justify-center rounded-lg overflow-hidden shadow-md">
-            <img
-              src={image3}
-              alt="Tech Sprouts Activity"
-              className="w-full h-full object-cover transform hover:scale-105 transition-transform duration-300"
+          <div className="flex justify-center">
+            <TiltedCard
+              imageSrc={image3}
+              altText="Tech Sprouts Activity - Collaborative Work"
+              captionText="Collaborative Learning"
+              containerHeight="256px"
+              containerWidth="100%"
+              imageHeight="256px"
+              imageWidth="100%"
+              rotateAmplitude={8}
+              scaleOnHover={1.08}
+              showTooltip={true}
+              displayOverlayContent={true}
+              overlayContent={
+                <p className="text-white font-semibold">Team Collaboration</p>
+              }
+              className="w-full"
             />
           </div>
         </div>
