@@ -32,23 +32,19 @@ function ScrollToTop() {
 
 function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = React.useState(false);
-  const [activeLink, setActiveLink] = React.useState("/");
+  const location = useLocation(); // Use location hook to get current route
+  const activeLink = location.pathname; // Set active link based on current pathname
   // We'll still use useTheme() but ignore the darkMode parts
   const { darkMode } = useTheme();
-
-  React.useEffect(() => {
-    setActiveLink(window.location.pathname);
-  }, []);
 
   return (
     <header className="bg-white text-gray-800 shadow-lg sticky top-0 z-50 transition-colors duration-300">
       <div className="container mx-auto px-4 py-3">
         <div className="flex justify-between items-center">
-          {/* Logo and brand */}
+          {/* Logo and brand */}{" "}
           <Link
             to="/"
             className="flex items-center space-x-2 hover:opacity-90 transition-opacity"
-            onClick={() => setActiveLink("/")}
           >
             <div className="relative">
               <div className="absolute inset-0 bg-green-500 rounded-full blur-sm opacity-30 animate-pulse"></div>
@@ -67,7 +63,6 @@ function Navbar() {
               </span>
             </div>
           </Link>
-
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center">
             <ul className="flex items-center space-x-1">
@@ -78,6 +73,7 @@ function Navbar() {
                 { path: "/contact", label: "Contact" },
               ].map((item) => (
                 <li key={item.path}>
+                  {" "}
                   <Link
                     to={item.path}
                     className={`px-4 py-2 rounded-full font-medium transition-all duration-200 inline-flex items-center ${
@@ -85,7 +81,6 @@ function Navbar() {
                         ? "bg-green-100 text-green-700"
                         : "text-gray-600 hover:bg-gray-100"
                     }`}
-                    onClick={() => setActiveLink(item.path)}
                   >
                     {item.label}
                   </Link>
@@ -104,7 +99,6 @@ function Navbar() {
               </li>
             </ul>
           </nav>
-
           <div className="md:hidden flex items-center">
             {/* Mobile menu button - replaced with animated hamburger */}
             <HamburgerIcon
@@ -139,6 +133,7 @@ function Navbar() {
                   key={item.path}
                   className={mobileMenuOpen ? "mobile-menu-item" : ""}
                 >
+                  {" "}
                   <Link
                     to={item.path}
                     className={`block px-4 py-2 rounded-lg font-medium ${
@@ -147,7 +142,6 @@ function Navbar() {
                         : "text-gray-600 hover:bg-gray-100"
                     }`}
                     onClick={() => {
-                      setActiveLink(item.path);
                       setMobileMenuOpen(false);
                     }}
                   >
