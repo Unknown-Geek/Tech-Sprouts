@@ -4,6 +4,9 @@ import logo from "../assets/logo.png";
 import image1 from "../assets/1.jpeg";
 import image2 from "../assets/2.jpeg";
 import image3 from "../assets/3.jpeg";
+import ISL1 from "../assets/ISL_1.webp";
+import ISL2 from "../assets/ISL_2.webp";
+import ISL3 from "../assets/ISL_3.webp";
 
 function Home() {
   const navigate = useNavigate();
@@ -45,8 +48,134 @@ function Home() {
         </div>
       </section>
 
+      {/* Indian Startup League 2025 Achievement Section */}
+      <section className="mb-16 bg-gradient-to-r from-purple-50 to-indigo-50 p-8 rounded-lg shadow-md card-animate">
+        <div className="text-center mb-8">
+          <div className="inline-flex items-center justify-center w-16 h-16 bg-purple-100 rounded-full mb-4">
+            <i className="fas fa-trophy text-purple-600 text-2xl"></i>
+          </div>
+          <h2 className="text-3xl font-bold text-purple-700 mb-4">
+            Selected Among Top 20 Startups in India
+          </h2>
+          <h3 className="text-xl font-semibold text-purple-600 mb-6">
+            Indian Startup League 2025
+          </h3>
+        </div>
+        <div>
+          <div className="bg-white p-6 rounded-lg shadow-sm mb-6">
+            <p className="text-gray-700 text-lg leading-relaxed text-center">
+              We are proud to announce a significant milestone in our journey
+              with{" "}
+              <span className="font-bold text-green-600">Tech Sprouts</span>.
+              <br />
+              <br />
+              We had the exceptional opportunity to participate in the{" "}
+              <span className="font-bold">Indian Startup League 2025</span>,
+              where Tech Sprouts was selected among the{" "}
+              <span className="font-bold text-purple-600">Top 20 startups</span>{" "}
+              from across the country. During this prestigious event, we
+              presented our innovative educational technology solution and
+              engaged in comprehensive discussions with a distinguished global
+              jury panel.
+              <br />
+              <br />
+              This experience provided invaluable insights and has strengthened
+              our commitment to advancing technology education for young
+              learners. We are grateful for the opportunity to connect with
+              visionary founders, explore cutting-edge ideas, and continue
+              building bridges between technology and education. This
+              recognition motivates us to further our mission of making
+              technology accessible and engaging for students nationwide.
+            </p>
+          </div>{" "}
+          {/* ISL Images Gallery */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="rounded-lg shadow-sm overflow-hidden">
+              <img
+                src={ISL1}
+                alt="Tech Sprouts at Indian Startup League 2025 - Presentation"
+                className="w-full h-60 object-cover object-center transform hover:scale-105 transition-transform duration-300"
+                style={{ objectPosition: "center 15%" }}
+              />
+            </div>
+            <div className="rounded-lg shadow-sm overflow-hidden">
+              <img
+                src={ISL2}
+                alt="Tech Sprouts at Indian Startup League 2025 - Team"
+                className="w-full h-60 object-cover transform hover:scale-105 transition-transform duration-300"
+              />
+            </div>
+            <div className="rounded-lg shadow-sm overflow-hidden">
+              <img
+                src={ISL3}
+                alt="Tech Sprouts at Indian Startup League 2025 - Event"
+                className="w-full h-60 object-cover transform hover:scale-105 transition-transform duration-300"
+              />
+            </div>
+          </div>
+          <div className="text-center mt-6">
+            <div className="inline-flex flex-wrap gap-2 text-sm text-purple-600">
+              <span className="bg-purple-100 px-3 py-1 rounded-full">
+                #TechSprouts
+              </span>
+              <span className="bg-purple-100 px-3 py-1 rounded-full">
+                #IndianStartupLeague
+              </span>
+              <span className="bg-purple-100 px-3 py-1 rounded-full">
+                #Top20Startups
+              </span>
+              <span className="bg-purple-100 px-3 py-1 rounded-full">
+                #ISL2025
+              </span>
+              <span className="bg-purple-100 px-3 py-1 rounded-full">
+                #EdTech
+              </span>
+              <span className="bg-purple-100 px-3 py-1 rounded-full">
+                #StudentStartup
+              </span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* About Us Section */}
+      <section className="mb-16 card-animate">
+        <div className="text-center mb-8">
+          <h2 className="text-3xl font-bold text-gray-800 mb-4">About Us</h2>
+          <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+            At Tech Sprouts, we believe every child should have the opportunity
+            to explore technology in a creative and supportive environment. Our
+            instructors guide students through hands-on projects, collaborative
+            learning, and real-world problem solving.
+          </p>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="bg-gray-200 h-64 flex items-center justify-center rounded-lg overflow-hidden shadow-md">
+            <img
+              src={image1}
+              alt="Tech Sprouts Activity"
+              className="w-full h-full object-cover transform hover:scale-105 transition-transform duration-300"
+            />
+          </div>
+          <div className="bg-gray-200 h-64 flex items-center justify-center rounded-lg overflow-hidden shadow-md">
+            <img
+              src={image2}
+              alt="Tech Sprouts Activity"
+              className="w-full h-full object-cover transform hover:scale-105 transition-transform duration-300"
+            />
+          </div>
+          <div className="bg-gray-200 h-64 flex items-center justify-center rounded-lg overflow-hidden shadow-md">
+            <img
+              src={image3}
+              alt="Tech Sprouts Activity"
+              className="w-full h-full object-cover transform hover:scale-105 transition-transform duration-300"
+            />
+          </div>
+        </div>
+      </section>
+
       {/* Why Choose Us Section */}
-      <section className="mb-16 bg-green-50 p-8 rounded-lg shadow-md">
+      <section className="mb-16 bg-green-50 p-8 rounded-lg shadow-md card-animate">
         <h2 className="text-3xl font-bold text-green-700 mb-6 text-center">
           WHY CHOOSE US
         </h2>
@@ -71,7 +200,7 @@ function Home() {
 
           <div className="bg-white p-6 rounded-lg shadow-sm">
             <h4 className="text-lg font-semibold text-green-700 mb-3">
-              About Us
+              Student-Led Organization
             </h4>
             <p className="text-gray-700">
               Tech Sprouts is a student-led organization that helps school
@@ -109,7 +238,7 @@ function Home() {
       </section>
 
       {/* How Do Sessions Work Section */}
-      <section className="mb-16 bg-blue-50 p-8 rounded-lg shadow-md">
+      <section className="mb-16 bg-blue-50 p-8 rounded-lg shadow-md card-animate">
         <h2 className="text-3xl font-bold text-blue-700 mb-6 text-center">
           HOW DO SESSIONS WORK?
         </h2>
@@ -169,39 +298,6 @@ function Home() {
               Explore Our Courses
             </button>
           </div>
-        </div>
-      </section>
-
-      <section className="mb-12">
-        <h2 className="text-2xl font-semibold mb-4">About Us</h2>
-        <p className="text-gray-600 mb-4">
-          At Tech Sprouts, we believe every child should have the opportunity to
-          explore technology in a creative and supportive environment. Our
-          instructors guide students through hands-on projects, collaborative
-          learning, and real-world problem solving.
-        </p>
-      </section>
-      <section className="grid grid-cols-1 md:grid-cols-3 gap-8">
-        <div className="bg-gray-200 h-64 flex items-center justify-center rounded-lg overflow-hidden shadow-md">
-          <img
-            src={image1}
-            alt="Tech Sprouts Activity"
-            className="w-full h-full object-cover transform hover:scale-105 transition-transform duration-300"
-          />
-        </div>
-        <div className="bg-gray-200 h-64 flex items-center justify-center rounded-lg overflow-hidden shadow-md">
-          <img
-            src={image2}
-            alt="Tech Sprouts Activity"
-            className="w-full h-full object-cover transform hover:scale-105 transition-transform duration-300"
-          />
-        </div>
-        <div className="bg-gray-200 h-64 flex items-center justify-center rounded-lg overflow-hidden shadow-md">
-          <img
-            src={image3}
-            alt="Tech Sprouts Activity"
-            className="w-full h-full object-cover transform hover:scale-105 transition-transform duration-300"
-          />
         </div>
       </section>
     </div>
