@@ -794,13 +794,17 @@ button:hover,
 
 .duolingo-logo-container {
   margin-bottom: 2rem;
+  opacity: 0;
+  transform: translateY(40px) scale(0.95);
+  animation: heroLogoIn 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  animation-delay: 0.1s;
 }
 
 .duolingo-logo-bg {
   width: 120px;
   height: 120px;
-  background: linear-gradient(45deg, #22c55e, #16a34a);
   border-radius: 30px;
+  background: linear-gradient(45deg, #22c55e, #16a34a);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -816,8 +820,8 @@ button:hover,
 }
 
 .duolingo-logo {
-  width: 80px;
-  height: 80px;
+  width: 90px;
+  height: 90px;
   object-fit: cover;
   border-radius: 20px;
 }
@@ -829,6 +833,10 @@ button:hover,
   margin-bottom: 1rem;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
   line-height: 1.1;
+  opacity: 0;
+  transform: translateY(30px) scale(0.98);
+  animation: heroTitleIn 0.7s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  animation-delay: 0.3s;
 }
 
 .duolingo-subtitle {
@@ -836,6 +844,10 @@ button:hover,
   font-weight: 700;
   color: #16a34a;
   margin-bottom: 1.5rem;
+  opacity: 0;
+  transform: translateY(25px) scale(0.98);
+  animation: heroSubtitleIn 0.7s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  animation-delay: 0.5s;
 }
 
 .duolingo-description {
@@ -843,6 +855,9 @@ button:hover,
   color: #374151;
   margin-bottom: 2.5rem;
   line-height: 1.6;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: descriptionFadeIn 1s ease-out 0.6s forwards;
 }
 
 .duolingo-cta-buttons {
@@ -851,6 +866,10 @@ button:hover,
   gap: 1rem;
   align-items: center;
   margin-bottom: 3rem;
+  opacity: 0;
+  transform: translateY(30px) scale(0.98);
+  animation: heroButtonsIn 0.7s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  animation-delay: 0.7s;
 }
 
 .duolingo-primary-btn {
@@ -906,6 +925,10 @@ button:hover,
   justify-content: center;
   gap: 2rem;
   flex-wrap: wrap;
+  opacity: 0;
+  transform: translateY(25px) scale(0.98);
+  animation: heroStatsIn 0.7s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  animation-delay: 0.9s;
 }
 
 .stat-item {
@@ -1772,5 +1795,61 @@ main > div:last-child,
     font-weight: 700;
     text-align: center;
     white-space: nowrap;
+  }
+}
+
+/* Missing keyframes for duolingo hero section animations */
+@keyframes heroLogoIn {
+  from {
+    opacity: 0;
+    transform: translateY(40px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes heroTitleIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes heroSubtitleIn {
+  from {
+    opacity: 0;
+    transform: translateY(25px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes heroButtonsIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes heroStatsIn {
+  from {
+    opacity: 0;
+    transform: translateY(25px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
   }
 }
