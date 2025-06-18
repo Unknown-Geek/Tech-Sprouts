@@ -164,7 +164,7 @@ function Register() {
   return (
     <section className="py-16 bg-white">
       <div className="container mx-auto px-4">
-        <h2 className="text-3xl font-bold text-center mb-8 card-animate">
+        <h2 className="text-3xl font-bold text-center text-green-700 mb-6 card-animate">
           Student Registration
         </h2>
         <div

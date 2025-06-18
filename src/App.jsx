@@ -18,6 +18,7 @@ import { useTheme } from "./components/ThemeContext";
 import HamburgerIcon from "./components/HamburgerIcon";
 import { CSSTransition, TransitionGroup } from "react-transition-group";
 import "./styles/transitions.css";
+import "./styles/duolingo-styles.css";
 
 // ScrollToTop component that scrolls to the top when navigating to a new page
 function ScrollToTop() {
