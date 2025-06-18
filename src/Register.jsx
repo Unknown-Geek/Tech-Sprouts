@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from "react";
 import { CheckCircle } from "lucide-react";
 import { useNavigate } from "react-router-dom";
-import "./index.css";
+import "./styles/index.css";
 
 function Register() {
   const navigate = useNavigate();

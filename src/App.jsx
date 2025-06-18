@@ -11,13 +11,13 @@ import Courses from "./Courses";
 import Register from "./Register";
 import Contact from "./Contact";
 import Payment from "./Payment";
-import Loader from "./Loader";
-import "./index.css";
+import Loader from "./components/Loader";
+import "./styles/index.css";
 import logo from "../assets/logo.png";
-import { useTheme } from "./ThemeContext";
-import HamburgerIcon from "./HamburgerIcon";
+import { useTheme } from "./components/ThemeContext";
+import HamburgerIcon from "./components/HamburgerIcon";
 import { CSSTransition, TransitionGroup } from "react-transition-group";
-import "./transitions.css";
+import "./styles/transitions.css";
 
 // ScrollToTop component that scrolls to the top when navigating to a new page
 function ScrollToTop() {

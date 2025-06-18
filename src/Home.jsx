@@ -7,7 +7,7 @@ import image3 from "../assets/3.jpeg";
 import ISL1 from "../assets/ISL_1.webp";
 import ISL2 from "../assets/ISL_2.webp";
 import ISL3 from "../assets/ISL_3.webp";
-import TiltedCard from "./TiltedCard";
+import TiltedCard from "./components/TiltedCard";
 import DraggableAvatar from "./components/DraggableAvatar";
 
 function Home() {
