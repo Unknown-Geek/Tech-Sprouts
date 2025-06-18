@@ -64,448 +64,469 @@ function Home() {
 
   return (
     <div>
-      {/* Modern Hero Section */}
-      <section className="hero-container">
-        {/* Floating background elements */}
-        <div className="floating-element"></div>
-        <div className="floating-element"></div>
-        <div className="floating-element"></div>
-        <div className="floating-element"></div>
-        <div className="floating-element"></div>
-        <div className="floating-element"></div>
-        {/* Floating interactive cards */}
-        <div className="floating-card floating-card-1">
+      {" "}
+      {/* Duolingo-inspired Hero Section */}
+      <section className="duolingo-hero">
+        {/* Fun floating shapes */}
+        <div className="duolingo-shape duolingo-shape-1"></div>
+        <div className="duolingo-shape duolingo-shape-2"></div>
+        <div className="duolingo-shape duolingo-shape-3"></div>
+        <div className="duolingo-shape duolingo-shape-4"></div>
+        {/* Floating skill badges */}
+        <div className="skill-badge skill-badge-1">
           <div className="flex items-center space-x-2">
-            <div className="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center">
-              <i className="fas fa-code text-white text-sm"></i>
+            <div className="w-10 h-10 bg-green-500 rounded-2xl flex items-center justify-center shadow-lg">
+              <i className="fas fa-code text-white text-lg"></i>
             </div>
             <div>
-              <div className="text-sm font-semibold text-gray-800">
+              <div className="text-sm font-bold text-gray-800">
                 Learn Coding
               </div>
-              <div className="text-xs text-gray-600">HTML,CSS</div>
-            </div>
-          </div>
-        </div>
-        <div className="floating-card floating-card-2">
-          <div className="flex items-center space-x-2">
-            <div className="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center">
-              <i className="fas fa-robot text-white text-sm"></i>
-            </div>
-            <div>
-              <div className="text-sm font-semibold text-gray-800">
-                Create Websites
+              <div className="text-xs text-green-600 font-semibold">
+                HTML & CSS
               </div>
-              <div className="text-xs text-gray-600">Google Sites, WIX</div>
             </div>
           </div>
         </div>
-        <div className="floating-card floating-card-3">
+        <div className="skill-badge skill-badge-2">
           <div className="flex items-center space-x-2">
-            <div className="w-8 h-8 bg-purple-500 rounded-full flex items-center justify-center">
-              <i className="fas fa-gamepad text-white text-sm"></i>
+            <div className="w-10 h-10 bg-blue-500 rounded-2xl flex items-center justify-center shadow-lg">
+              <i className="fas fa-globe text-white text-lg"></i>
             </div>
             <div>
-              <div className="text-sm font-semibold text-gray-800">
+              <div className="text-sm font-bold text-gray-800">
+                Build Websites
+              </div>
+              <div className="text-xs text-blue-600 font-semibold">
+                GSites & WIX
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="skill-badge skill-badge-3">
+          <div className="flex items-center space-x-2">
+            <div className="w-10 h-10 bg-purple-500 rounded-2xl flex items-center justify-center shadow-lg">
+              <i className="fas fa-gamepad text-white text-lg"></i>
+            </div>
+            <div>
+              <div className="text-sm font-bold text-gray-800">
                 Create Games
               </div>
-              <div className="text-xs text-gray-600">Scratch</div>
+              <div className="text-xs text-purple-600 font-semibold">
+                Scratch
+              </div>
             </div>
           </div>
         </div>
-        <div className="floating-card floating-card-4">
+        <div className="skill-badge skill-badge-4">
           <div className="flex items-center space-x-2">
-            <div className="w-8 h-8 bg-red-500 rounded-full flex items-center justify-center">
-              <i className="fas fa-trophy text-white text-sm"></i>
+            <div className="w-10 h-10 bg-yellow-500 rounded-2xl flex items-center justify-center shadow-lg">
+              <i className="fas fa-palette text-white text-lg"></i>
             </div>
             <div>
-              <div className="text-sm font-semibold text-gray-800">Top 20</div>
-              <div className="text-xs text-gray-600">ISL 2025</div>
+              <div className="text-sm font-bold text-gray-800">
+                Create Designs
+              </div>
+              <div className="text-xs text-yellow-600 font-semibold">
+                Canva & WIX
+              </div>
             </div>
           </div>
         </div>{" "}
-        {/* Floating avatars - positioned in non-text regions */}
+        {/* Interactive learning avatars */}
         <DraggableAvatar
-          className="floating-avatar floating-avatar-1"
+          className="learning-avatar floating-avatar learning-avatar-1"
           initialPosition={getInitialPosition(5, 2)}
         >
           HTML
-        </DraggableAvatar>
+        </DraggableAvatar>{" "}
         <DraggableAvatar
-          className="floating-avatar floating-avatar-2"
-          initialPosition={getInitialPosition(8, undefined, 2)}
+          className="learning-avatar floating-avatar learning-avatar-2"
+          initialPosition={getInitialPosition(1, undefined, 4, undefined)}
         >
           WIX
         </DraggableAvatar>
         <DraggableAvatar
-          className="floating-avatar floating-avatar-3"
+          className="learning-avatar floating-avatar learning-avatar-3"
           initialPosition={getInitialPosition(undefined, 2, undefined, 5)}
         >
           MIT
         </DraggableAvatar>
         <DraggableAvatar
-          className="floating-avatar floating-avatar-4"
-          initialPosition={getInitialPosition(undefined, undefined, 2, 8)}
+          className="learning-avatar floating-avatar learning-avatar-4"
+          initialPosition={getInitialPosition(undefined, undefined, 6, 8)}
         >
-          CSS
+          Canva
         </DraggableAvatar>
-        {/* Hero content */}
-        <div className="hero-content">
-          <div className="hero-logo">
-            <img src={logo} alt="Tech Sprouts Logo" className="object-cover" />
+        {/* Main hero content */}
+        <div className="duolingo-hero-content">
+          <div className="duolingo-logo-container">
+            <div className="duolingo-logo-bg">
+              <img
+                src={logo}
+                alt="Tech Sprouts Logo"
+                className="duolingo-logo"
+              />
+            </div>
           </div>
-
-          <h1 className="hero-title">The home for developer communities</h1>
-
-          <h2 className="hero-subtitle">
-            Tech Sprouts - Growing Young Minds with Technology
-          </h2>
-
-          <p className="hero-description">
-            Learn programming, build amazing projects, and connect with fellow
-            young developers. We make technology accessible and exciting for
-            students through hands-on learning and creative collaboration.
-          </p>
-
-          <div className="hero-buttons">
+          <h1 className="duolingo-main-title">Welcome to Tech Sprouts!</h1>
+          <h2 className="duolingo-subtitle">The fun way to learn technology</h2>
+          <p className="duolingo-description">
+            Join thousands of young minds discovering the magic of coding! Build
+            games, create websites, and become a tech superhero with our
+            interactive lessons and friendly community.
+          </p>{" "}
+          <div className="duolingo-cta-buttons">
             <button
-              className="hero-btn-primary"
+              className="duolingo-primary-btn"
               onClick={() => navigate("/register")}
             >
-              Start Learning Today
+              {" "}
+              Start Your Journey
             </button>
             <a
               href="https://chat.whatsapp.com/J75hEOoDJIzGALTMxFo4Pk"
               target="_blank"
               rel="noopener noreferrer"
-              className="hero-btn-secondary flex items-center justify-center space-x-2"
+              className="duolingo-secondary-btn"
             >
-              <i className="fab fa-whatsapp text-xl"></i>
-              <span>Join Community</span>
+              <i className="fab fa-whatsapp text-2xl mr-2"></i>
+              Join Friends
             </a>
+          </div>
+          {/* Fun stats */}
+          <div className="duolingo-stats">
+            <div className="stat-item">
+              <div className="stat-number">50+</div>
+              <div className="stat-label">Happy Students</div>
+            </div>
+            <div className="stat-item">
+              <div className="stat-number">10+</div>
+              <div className="stat-label">Sessions Held</div>
+            </div>
+            <div className="stat-item">
+              <div className="stat-number">Top 20</div>
+              <div className="stat-label">ISL 2025</div>
+            </div>
           </div>
         </div>
       </section>
-
-      {/* Rest of the content */}
-      <div className="container mx-auto px-4 py-8">
-        {/* Indian Startup League 2025 Achievement Section */}
-        <section className="mb-16 bg-gradient-to-r from-purple-50 to-indigo-50 p-8 rounded-lg shadow-md card-animate">
-          <div className="text-center mb-8">
-            <div className="inline-flex items-center justify-center w-16 h-16 bg-purple-100 rounded-full mb-4">
-              <i className="fas fa-trophy text-purple-600 text-2xl"></i>
+      {/* Rest of the content */}{" "}
+      <div className="duolingo-container">
+        {/* Achievement Badge Section */}
+        <section className="achievement-section">
+          <div className="achievement-badge">
+            <div className="achievement-icon">
+              <i className="fas fa-trophy text-6xl text-yellow-500"></i>
             </div>
-            <h2 className="text-3xl font-bold text-purple-700 mb-4">
-              Selected Among Top 20 Startups in India
-            </h2>
-            <h3 className="text-xl font-semibold text-purple-600 mb-6">
-              Indian Startup League 2025
-            </h3>
+            <h2 className="achievement-title">We Made It to the Top 20!</h2>
+            <h3 className="achievement-subtitle">Indian Startup League 2025</h3>
           </div>
-          <div>
-            <div className="bg-white p-6 rounded-lg shadow-sm mb-6">
-              <p className="text-gray-700 text-lg leading-relaxed text-center">
-                We are proud to announce a significant milestone in our journey
-                with{" "}
-                <span className="font-bold text-green-600">Tech Sprouts</span>.
+
+          <div className="achievement-story">
+            <div className="story-card">
+              <p className="story-text">
+                Guess what?<br></br>
+                <span className="highlight-green">Tech Sprouts</span> just
+                became one of the{" "}
+                <span className="highlight-trophy">
+                  Top 20 startups in all of India!
+                </span>
                 <br />
                 <br />
-                We had the exceptional opportunity to participate in the{" "}
-                <span className="font-bold">Indian Startup League 2025</span>,
-                where Tech Sprouts was selected among the{" "}
-                <span className="font-bold text-purple-600">
-                  Top 20 startups
-                </span>{" "}
-                from across the country. During this prestigious event, we
-                presented our innovative educational technology solution and
-                engaged in comprehensive discussions with a distinguished global
-                jury panel.
+                We got to present our awesome idea to amazing judges from around
+                the world! It was like showing your coolest project to the whole
+                class, but even MORE exciting!
                 <br />
                 <br />
-                This experience provided invaluable insights and has
-                strengthened our commitment to advancing technology education
-                for young learners. We are grateful for the opportunity to
-                connect with visionary founders, explore cutting-edge ideas, and
-                continue building bridges between technology and education. This
-                recognition motivates us to further our mission of making
-                technology accessible and engaging for students nationwide.
+                This super cool experience taught us so much and made us even
+                more excited to help YOU learn technology in the most fun way
+                possible!
               </p>
-            </div>{" "}
-            {/* ISL Images Gallery */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              {" "}
-              <div className="flex justify-center">
+            </div>
+
+            {/* Fun ISL Gallery */}
+            <div className="learning-showcase mb-8">
+              <div className="showcase-item">
                 <TiltedCard
                   imageSrc={ISL1}
-                  altText="Tech Sprouts at Indian Startup League 2025 - Presentation"
-                  captionText="ISL 2025 Presentation"
-                  containerHeight="240px"
+                  altText="Kids Having Fun Learning!"
+                  captionText="Learning is Fun Here!"
+                  containerHeight="280px"
                   containerWidth="100%"
-                  imageHeight="240px"
+                  imageHeight="280px"
                   imageWidth="100%"
                   rotateAmplitude={8}
-                  scaleOnHover={1.05}
+                  scaleOnHover={1.08}
                   showTooltip={true}
-                  className="w-full"
-                  imageStyle={{ objectPosition: "center 14.5%" }}
+                  displayOverlayContent={true}
+                  imageStyle={{
+                    objectFit: "cover",
+                    objectPosition: "center 20%",
+                  }}
+                  className="showcase-card"
                 />
               </div>
-              <div className="flex justify-center">
+              <div className="showcase-item">
                 <TiltedCard
                   imageSrc={ISL2}
-                  altText="Tech Sprouts at Indian Startup League 2025 - Team"
-                  captionText="Our Team at ISL 2025"
-                  containerHeight="240px"
+                  altText="Amazing Projects by Kids!"
+                  captionText="Build Cool Projects!"
+                  containerHeight="280px"
                   containerWidth="100%"
-                  imageHeight="240px"
+                  imageHeight="280px"
                   imageWidth="100%"
                   rotateAmplitude={8}
-                  scaleOnHover={1.05}
+                  scaleOnHover={1.08}
                   showTooltip={true}
-                  className="w-full"
+                  displayOverlayContent={true}
+                  imageStyle={{
+                    objectFit: "cover",
+                    objectPosition: "center 60%",
+                  }}
+                  className="showcase-card"
                 />
               </div>
-              <div className="flex justify-center">
+              <div className="showcase-item">
                 <TiltedCard
                   imageSrc={ISL3}
-                  altText="Tech Sprouts at Indian Startup League 2025 - Event"
-                  captionText="ISL 2025 Event"
-                  containerHeight="240px"
+                  altText="Friends Learning Together!"
+                  captionText="Learn with Friends!"
+                  containerHeight="280px"
                   containerWidth="100%"
-                  imageHeight="240px"
+                  imageHeight="280px"
                   imageWidth="100%"
                   rotateAmplitude={8}
-                  scaleOnHover={1.05}
+                  scaleOnHover={1.08}
                   showTooltip={true}
-                  className="w-full"
+                  displayOverlayContent={true}
+                  className="showcase-card"
                 />
               </div>
             </div>
-            <div className="text-center mt-6">
-              <div className="inline-flex flex-wrap gap-2 text-sm text-purple-600">
-                <span className="bg-purple-100 px-3 py-1 rounded-full">
-                  #TechSprouts
-                </span>
-                <span className="bg-purple-100 px-3 py-1 rounded-full">
-                  #IndianStartupLeague
-                </span>
-                <span className="bg-purple-100 px-3 py-1 rounded-full">
-                  #Top20Startups
-                </span>
-                <span className="bg-purple-100 px-3 py-1 rounded-full">
-                  #ISL2025
-                </span>
-                <span className="bg-purple-100 px-3 py-1 rounded-full">
-                  #EdTech
-                </span>
-                <span className="bg-purple-100 px-3 py-1 rounded-full">
-                  #StudentStartup
-                </span>
-              </div>
+
+            <div className="achievement-tags">
+              {" "}
+              <span className="fun-tag tag-green">#TechSprouts</span>
+              <span className="fun-tag tag-purple">#Top20Startups</span>
+              <span className="fun-tag tag-blue">#ISL2025</span>
+              <span className="fun-tag tag-yellow">#YoungInnovators</span>
+              <span className="fun-tag tag-pink">#StudentPower</span>
             </div>
           </div>
-        </section>
-
-        {/* About Us Section */}
-        <section className="mb-16 card-animate">
-          <div className="text-center mb-8">
-            <h2 className="text-3xl font-bold text-gray-800 mb-4">About Us</h2>
-            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              At Tech Sprouts, we believe every child should have the
-              opportunity to explore technology in a creative and supportive
-              environment. Our instructors guide students through hands-on
-              projects, collaborative learning, and real-world problem solving.
+        </section>{" "}
+        {/* About Us - Kid-friendly Section */}
+        <section className="about-section">
+          <div className="about-header">
+            <h2 className="about-title">What Makes Us Special?</h2>
+            <p className="about-description">
+              We're like your tech playground! Where every kid can become a
+              coding superhero and build amazing things with technology. No
+              boring lectures - just pure fun!
             </p>
-          </div>{" "}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="flex justify-center">
+          </div>
+
+          <div className="learning-showcase">
+            <div className="showcase-item">
               <TiltedCard
                 imageSrc={image1}
-                altText="Tech Sprouts Activity - Students Learning"
-                captionText="Students Learning Tech"
-                containerHeight="256px"
+                altText="Kids Having Fun Learning!"
+                captionText="Learning is Fun Here!"
+                containerHeight="280px"
                 containerWidth="100%"
-                imageHeight="256px"
+                imageHeight="280px"
                 imageWidth="100%"
                 rotateAmplitude={8}
                 scaleOnHover={1.08}
                 showTooltip={true}
                 displayOverlayContent={true}
                 overlayContent={
-                  <p className="text-white font-semibold">Hands-on Learning</p>
+                  <div className="showcase-overlay">
+                    {" "}
+                    <p className="overlay-text">Hands-on Fun Learning</p>
+                  </div>
                 }
-                className="w-full"
+                className="showcase-card"
               />
             </div>
-            <div className="flex justify-center">
+            <div className="showcase-item">
               <TiltedCard
                 imageSrc={image2}
-                altText="Tech Sprouts Activity - Creative Projects"
-                captionText="Creative Tech Projects"
-                containerHeight="256px"
+                altText="Amazing Projects by Kids!"
+                captionText="Build Cool Projects!"
+                containerHeight="280px"
                 containerWidth="100%"
-                imageHeight="256px"
+                imageHeight="280px"
                 imageWidth="100%"
                 rotateAmplitude={8}
                 scaleOnHover={1.08}
                 showTooltip={true}
                 displayOverlayContent={true}
                 overlayContent={
-                  <p className="text-white font-semibold">Creative Projects</p>
+                  <div className="showcase-overlay">
+                    {" "}
+                    <p className="overlay-text">Creative Projects</p>
+                  </div>
                 }
-                className="w-full"
+                className="showcase-card"
               />
             </div>
-            <div className="flex justify-center">
+            <div className="showcase-item">
               <TiltedCard
                 imageSrc={image3}
-                altText="Tech Sprouts Activity - Collaborative Work"
-                captionText="Collaborative Learning"
-                containerHeight="256px"
+                altText="Friends Learning Together!"
+                captionText="Learn with Friends!"
+                containerHeight="280px"
                 containerWidth="100%"
-                imageHeight="256px"
+                imageHeight="280px"
                 imageWidth="100%"
                 rotateAmplitude={8}
                 scaleOnHover={1.08}
                 showTooltip={true}
                 displayOverlayContent={true}
                 overlayContent={
-                  <p className="text-white font-semibold">Team Collaboration</p>
+                  <div className="showcase-overlay">
+                    {" "}
+                    <p className="overlay-text">Team Adventures</p>
+                  </div>
                 }
-                className="w-full"
+                className="showcase-card"
               />
             </div>
           </div>
-        </section>
-
-        {/* Why Choose Us Section */}
-        <section className="mb-16 bg-green-50 p-8 rounded-lg shadow-md card-animate">
-          <h2 className="text-3xl font-bold text-green-700 mb-6 text-center">
-            WHY CHOOSE US
-          </h2>
-          <h3 className="text-xl font-semibold text-green-600 mb-4 text-center">
-            GROWING YOUNG MINDS WITH TECH
-          </h3>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
-            <div className="bg-white p-6 rounded-lg shadow-sm">
-              <h4 className="text-lg font-semibold text-green-700 mb-3">
-                Flexible Learning Options
-              </h4>
-              <p className="text-gray-700 mb-3">
-                Most of our sessions are{" "}
-                <span className="font-bold">ONLINE</span>, so you can join from
-                anywhere!
+        </section>{" "}
+        {/* Why Choose Us - Super Fun Features */}
+        <section className="features-section">
+          <div className="features-header">
+            <h2 className="features-title">Why Kids Love Tech Sprouts</h2>
+            <h3 className="features-subtitle">Where Technology Meets Fun!</h3>
+          </div>{" "}
+          <div className="features-grid">
+            <div className="feature-card feature-card-primary">
+              <div className="feature-icon"></div>
+              <h4 className="feature-title">Learn from Anywhere!</h4>
+              <p className="feature-description">
+                Most of our super cool sessions are{" "}
+                <span className="highlight-bold">ONLINE !</span>
+                <br></br>Learn from your bedroom, living room, or even from
+                grandma's house!
               </p>
-              <p className="text-gray-700">
-                We also host offline workshops, events, and fun competitions
-                with certificates and exciting prizes for participants.
+              <p className="feature-bonus">
+                Plus, we have awesome offline workshops upcoming, with
+                certificates and prizes!
               </p>
-            </div>
+            </div>{" "}
+            <div className="feature-card feature-card-secondary">
+              <div className="feature-icon"></div>
+              <h4 className="feature-title">Made by Students, for Students!</h4>
+              <p className="feature-description">
+                We're students just like you! <br></br>We know what makes
+                learning fun and exciting. Just kids teaching kids!
+              </p>
 
-            <div className="bg-white p-6 rounded-lg shadow-sm">
-              <h4 className="text-lg font-semibold text-green-700 mb-3">
-                Student-Led Organization
-              </h4>
-              <p className="text-gray-700">
-                Tech Sprouts is a student-led organization that helps school
-                students learn about technology in a fun way. We make learning
-                easy and exciting through creative and hands-on sessions. Our
-                goal is to make tech simple and exciting for all.
+              <p className="feature-bonus">
+                Plus, we have awesome mentors who are super friendly and always
+                ready to help!
               </p>
             </div>
           </div>
-
-          <div className="flex flex-wrap justify-center gap-6 mt-6">
-            <div className="flex items-start bg-white p-4 rounded-lg shadow-sm max-w-xs">
-              <div className="rounded-full bg-green-100 p-3 mr-3 flex-shrink-0">
-                <i className="fas fa-brain text-green-600 text-xl"></i>
+          <div className="super-powers">
+            <h3 className="super-powers-title">Your Tech Superpowers</h3>
+            <div className="powers-grid">
+              <div className="power-item">
+                <div className="power-icon">
+                  <i className="fas fa-brain text-green-500 text-3xl"></i>
+                </div>{" "}
+                <p className="power-text">
+                  Unlock the secrets of technology in the most fun way possible!
+                </p>
               </div>
-              <p className="text-gray-700">
-                Learn about the world of technology in a simple and fun way
-              </p>
-            </div>
 
-            <div className="flex items-start bg-white p-4 rounded-lg shadow-sm max-w-xs">
-              <div className="rounded-full bg-green-100 p-3 mr-3 flex-shrink-0">
-                <i className="fas fa-paint-brush text-green-600 text-xl"></i>
+              <div className="power-item">
+                <div className="power-icon">
+                  <i className="fas fa-paint-brush text-green-500 text-3xl"></i>
+                </div>{" "}
+                <p className="power-text">
+                  Create amazing projects that will blow your friends' minds!
+                </p>
               </div>
-              <p className="text-gray-700">
-                Be creative and build real projects
-              </p>
-            </div>
 
-            <div className="flex items-start bg-white p-4 rounded-lg shadow-sm max-w-xs">
-              <div className="rounded-full bg-green-100 p-3 mr-3 flex-shrink-0">
-                <i className="fas fa-comments text-green-600 text-xl"></i>
+              <div className="power-item">
+                <div className="power-icon">
+                  <i className="fas fa-users text-green-500 text-3xl"></i>
+                </div>{" "}
+                <p className="power-text">
+                  Make new coding buddies and share your coolest ideas!
+                </p>
               </div>
-              <p className="text-gray-700">Work with friends and share ideas</p>
-            </div>
-          </div>
-        </section>
-
-        {/* How Do Sessions Work Section */}
-        <section className="mb-16 bg-blue-50 p-8 rounded-lg shadow-md card-animate">
-          <h2 className="text-3xl font-bold text-blue-700 mb-6 text-center">
-            HOW DO SESSIONS WORK?
-          </h2>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
-            <div className="bg-white p-5 rounded-lg shadow-sm flex flex-col items-center">
-              <div className="rounded-full bg-blue-100 w-16 h-16 flex items-center justify-center mb-4">
-                <i className="fas fa-calendar-check text-blue-600 text-2xl"></i>
-              </div>
-              <h3 className="text-lg font-semibold text-blue-700 mb-2 text-center">
-                Schedule
-              </h3>
-              <p className="text-gray-700 text-center">
-                Weekly online sessions with flexible timing options
-              </p>
-            </div>
-
-            <div className="bg-white p-5 rounded-lg shadow-sm flex flex-col items-center">
-              <div className="rounded-full bg-blue-100 w-16 h-16 flex items-center justify-center mb-4">
-                <i className="fas fa-laptop-code text-blue-600 text-2xl"></i>
-              </div>
-              <h3 className="text-lg font-semibold text-blue-700 mb-2 text-center">
-                Learning
-              </h3>
-              <p className="text-gray-700 text-center">
-                Hands-on projects with step-by-step guidance from our
-                instructors
-              </p>
-            </div>
-
-            <div className="bg-white p-5 rounded-lg shadow-sm flex flex-col items-center">
-              <div className="rounded-full bg-blue-100 w-16 h-16 flex items-center justify-center mb-4">
-                <i className="fas fa-certificate text-blue-600 text-2xl"></i>
-              </div>
-              <h3 className="text-lg font-semibold text-blue-700 mb-2 text-center">
-                Achievement
-              </h3>
-              <p className="text-gray-700 text-center">
-                Complete projects and earn certificates to showcase your skills
-              </p>
             </div>
           </div>
-
-          <div className="bg-white p-6 rounded-lg shadow-sm">
-            <h3 className="text-lg font-semibold text-blue-700 mb-3">
-              Our Approach
-            </h3>
-            <p className="text-gray-700 mb-4">
-              Each session focuses on building practical skills through fun,
-              interactive projects. Students learn at their own pace with
-              personalized guidance from our instructors.
+        </section>{" "}
+        {/* How Sessions Work - Adventure Guide */}
+        <section className="sessions-section">
+          <div className="sessions-header">
+            <h2 className="sessions-title">Your Learning Adventure</h2>
+            <p className="sessions-description">
+              Ready to start your coding journey? Here's how the magic happens!
+              ✨
             </p>
-            <div className="flex justify-center">
+          </div>
+
+          <div className="learning-steps">
+            <div className="step-card step-1">
+              <div className="step-number">1</div>
+              <div className="step-icon">
+                <i className="fas fa-calendar-check text-blue-500 text-3xl"></i>
+              </div>
+              <h3 className="step-title">Pick Your Time!</h3>
+              <p className="step-description">
+                Choose when you want to learn - we have sessions that fit around
+                your school and playtime!
+              </p>
+            </div>
+
+            <div className="step-card step-2">
+              <div className="step-number">2</div>
+              <div className="step-icon">
+                <i className="fas fa-laptop-code text-green-500 text-3xl"></i>
+              </div>
+              <h3 className="step-title">Build Cool Stuff!</h3>
+              <p className="step-description">
+                Create games, websites, and amazing projects with help from our
+                friendly instructors!
+              </p>
+            </div>
+
+            <div className="step-card step-3">
+              <div className="step-number">3</div>
+              <div className="step-icon">
+                <i className="fas fa-trophy text-yellow-500 text-3xl"></i>
+              </div>
+              <h3 className="step-title">Show Off Your Skills!</h3>
+              <p className="step-description">
+                Complete awesome projects and get certificates to prove you're a
+                coding superhero!
+              </p>
+            </div>
+          </div>
+
+          <div className="approach-card">
+            <h3 className="approach-title"> Our Secret Formula</h3>
+            <p className="approach-description">
+              Every session is like a fun game where you learn by doing! No
+              boring lectures - just hands-on building, creating, and having a
+              blast with technology!
+            </p>
+            <div className="approach-cta">
+              {" "}
               <button
                 onClick={() => navigate("/courses")}
-                className="bg-blue-600 text-white px-6 py-2 rounded-md hover:bg-blue-700 transition"
+                className="explore-btn"
               >
-                Explore Our Courses
+                {" "}
+                Explore Our Adventures
               </button>
-            </div>{" "}
+            </div>
           </div>
         </section>
       </div>

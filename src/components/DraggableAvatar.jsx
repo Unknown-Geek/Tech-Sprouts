@@ -9,15 +9,13 @@ const DraggableAvatar = ({
   const [isDragging, setIsDragging] = useState(false);
   const [dragStart, setDragStart] = useState({ x: 0, y: 0 });
   const [showBounce, setShowBounce] = useState(false);
-  const avatarRef = useRef(null);
-
-  // Update position when window resizes to maintain relative positioning
+  const avatarRef = useRef(null); // Update position when window resizes to maintain relative positioning
   useEffect(() => {
     const handleResize = () => {
-      const heroContainer = document.querySelector(".hero-container");
+      const heroContainer = document.querySelector(".duolingo-hero");
       if (heroContainer && avatarRef.current) {
         const containerRect = heroContainer.getBoundingClientRect();
-        const avatarSize = 60;
+        const avatarSize = 70; // Updated to match CSS size
 
         // Constrain current position to new container bounds
         setPosition((prev) => ({
@@ -36,15 +34,16 @@ const DraggableAvatar = ({
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
-
   const getConstrainedPosition = useCallback(
     (clientX, clientY) => {
-      const heroContainer = document.querySelector(".hero-container");
-      if (!heroContainer) return { x: 0, y: 0 };
+      const heroContainer = document.querySelector(".duolingo-hero");
+      if (!heroContainer || !avatarRef.current)
+        return { x: position.x, y: position.y };
 
       const containerRect = heroContainer.getBoundingClientRect();
-      const avatarSize = 60;
+      const avatarSize = 70; // Updated to match CSS size
 
+      // Calculate position relative to the drag start offset
       let newX = clientX - containerRect.left - dragStart.x;
       let newY = clientY - containerRect.top - dragStart.y;
 
@@ -60,17 +59,28 @@ const DraggableAvatar = ({
 
       return { x: newX, y: newY };
     },
-    [dragStart]
+    [dragStart, position]
   );
-
   const handleMouseDown = (e) => {
     e.preventDefault();
-    setIsDragging(true);
+    e.stopPropagation();
+
+    if (!avatarRef.current) return;
+
     const rect = avatarRef.current.getBoundingClientRect();
+    const heroContainer = document.querySelector(".duolingo-hero");
+
+    if (!heroContainer) return;
+
+    const containerRect = heroContainer.getBoundingClientRect();
+
+    // Calculate the offset from the mouse to the avatar's current position
     setDragStart({
       x: e.clientX - rect.left,
       y: e.clientY - rect.top,
     });
+
+    setIsDragging(true);
   };
 
   const handleMouseMove = useCallback(
@@ -89,16 +99,24 @@ const DraggableAvatar = ({
       setTimeout(() => setShowBounce(false), 600);
     }
   }, [isDragging]);
-
   const handleTouchStart = (e) => {
     e.preventDefault();
+    e.stopPropagation();
+
+    if (!avatarRef.current) return;
+
     const touch = e.touches[0];
-    setIsDragging(true);
     const rect = avatarRef.current.getBoundingClientRect();
+    const heroContainer = document.querySelector(".duolingo-hero");
+
+    if (!heroContainer) return;
+
     setDragStart({
       x: touch.clientX - rect.left,
       y: touch.clientY - rect.top,
     });
+
+    setIsDragging(true);
   };
 
   const handleTouchMove = useCallback(
