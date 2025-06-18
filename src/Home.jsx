@@ -11,8 +11,7 @@ import TiltedCard from "./TiltedCard";
 import DraggableAvatar from "./components/DraggableAvatar";
 
 function Home() {
-  const navigate = useNavigate();
-  // Calculate initial positions based on viewport - avoiding text areas
+  const navigate = useNavigate(); // Calculate initial positions based on viewport - Stacker-style clean positioning
   const getInitialPosition = (
     topPercent,
     leftPercent,
@@ -24,35 +23,42 @@ function Home() {
     const viewportHeight =
       typeof window !== "undefined" ? window.innerHeight : 800;
 
-    // Define text-safe zones (outer 20% on each side, avoiding center 60%)
-    const textSafeMargin = viewportWidth * 0.15; // 15% margin from text areas
-    const verticalSafeMargin = viewportHeight * 0.1; // 10% margin from top/bottom
+    // Define safe zones - keep orbs in outer 25% margins, avoid center 50%
+    const horizontalSafeZone = viewportWidth * 0.25; // 25% from each side
+    const verticalSafeZone = viewportHeight * 0.2; // 20% from top/bottom
 
     let x = 0;
     let y = 0;
 
     if (leftPercent !== undefined) {
-      x = Math.min((viewportWidth * leftPercent) / 100, textSafeMargin);
+      // Place in left safe zone
+      x = Math.min(
+        (viewportWidth * leftPercent) / 100,
+        horizontalSafeZone - 60
+      );
     } else if (rightPercent !== undefined) {
+      // Place in right safe zone
       x = Math.max(
         viewportWidth - (viewportWidth * rightPercent) / 100 - 60,
-        viewportWidth - textSafeMargin - 60
+        viewportWidth - horizontalSafeZone
       );
     }
 
     if (topPercent !== undefined) {
-      y = Math.max((viewportHeight * topPercent) / 100, verticalSafeMargin);
+      // Place in top safe zone
+      y = Math.max((viewportHeight * topPercent) / 100, verticalSafeZone);
     } else if (bottomPercent !== undefined) {
+      // Place in bottom safe zone
       y = Math.min(
         viewportHeight - (viewportHeight * bottomPercent) / 100 - 60,
-        viewportHeight - verticalSafeMargin - 60
+        viewportHeight - verticalSafeZone - 60
       );
     }
 
-    // Ensure orbs stay in safe zones with proper margins
+    // Ensure minimum margins from viewport edges
     return {
-      x: Math.max(10, Math.min(x, viewportWidth - 70)),
-      y: Math.max(10, Math.min(y, viewportHeight - 70)),
+      x: Math.max(20, Math.min(x, viewportWidth - 80)),
+      y: Math.max(20, Math.min(y, viewportHeight - 80)),
     };
   };
 
