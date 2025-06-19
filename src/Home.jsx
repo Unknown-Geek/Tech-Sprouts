@@ -420,7 +420,7 @@ function Home() {
               <div className="feature-icon"></div>
               <h4 className="feature-title">Made by Students, for Students!</h4>
               <p className="feature-description">
-                We're students just like you! <br></br>We know what makes
+                We're students just like <span className="highlight-bold">YOU !</span><br></br>We know what makes
                 learning fun and exciting. Just kids teaching kids!
               </p>
 
