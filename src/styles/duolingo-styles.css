@@ -1198,7 +1198,10 @@ button:hover,
 .features-section {
   margin: 4rem 0;
   background: linear-gradient(135deg, #f0fdf4, #dcfce7);
-  padding: 3rem 2rem;
+  padding-top: 2rem;
+  padding-bottom: 3rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
   border-radius: 30px;
 }
 
@@ -1237,7 +1240,7 @@ button:hover,
 }
 
 .feature-card:hover {
-  transform: translateY(-8px);
+  transform: scale(1.01);
   box-shadow: 0 25px 60px rgba(0, 0, 0, 0.15);
 }
 
@@ -1332,7 +1335,10 @@ button:hover,
 .sessions-section {
   margin: 4rem 0;
   background: linear-gradient(135deg, #eff6ff, #dbeafe);
-  padding: 3rem 2rem;
+  padding-top: 2rem;
+  padding-bottom: 0.1rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
   border-radius: 30px;
   margin-bottom: 3rem;
 }
@@ -1525,6 +1531,18 @@ main > div:last-child,
 .sessions-section:last-child {
   margin-bottom: 3rem !important;
   padding-bottom: 1rem !important;
+}
+
+/* Remove hover effect from inner pricing card */
+.course-card .bg-white.rounded-lg {
+  transform: none !important;
+  box-shadow: none !important;
+  transition: none !important;
+}
+
+.course-card .bg-white.rounded-lg:hover {
+  transform: none !important;
+  box-shadow: none !important;
 }
 
 /* Responsive Design */

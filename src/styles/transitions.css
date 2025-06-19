@@ -1196,13 +1196,6 @@ button:hover,
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
-/* Features Section */
-.features-section {
-  margin: 4rem 0;
-  background: linear-gradient(135deg, #f0fdf4, #dcfce7);
-  padding: 3rem 2rem;
-  border-radius: 30px;
-}
 
 .features-header {
   text-align: center;
@@ -1330,14 +1323,7 @@ button:hover,
   margin-right: 0.5rem;
 }
 
-/* Sessions Section */
-.sessions-section {
-  margin: 4rem 0;
-  background: linear-gradient(135deg, #eff6ff, #dbeafe);
-  padding: 3rem 2rem;
-  border-radius: 30px;
-  margin-bottom: 3rem;
-}
+
 
 .sessions-header {
   text-align: center;

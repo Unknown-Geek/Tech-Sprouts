@@ -100,7 +100,7 @@ function Courses() {
           {courseData.map((course, index) => (
             <div
               key={index}
-              className={`rounded-lg shadow-lg overflow-hidden border-t-4 ${course.borderColor} ${course.bgColor} transition-transform duration-300 hover:scale-105 card-animate`}
+              className={`rounded-[20px] shadow-lg overflow-hidden border-t-4 ${course.borderColor} ${course.bgColor} card-animate `}
               style={{ animationDelay: `${index * 0.08}s` }}
             >
               <div className="p-6">
@@ -109,7 +109,7 @@ function Courses() {
                   <h3 className="text-xl font-bold">{course.name}</h3>
                 </div>
                 <p className="text-gray-600 mb-4">{course.description}</p>
-                <div className="bg-white rounded-lg p-4 shadow-inner">
+                <div className="bg-white rounded-[15px] p-4 ">
                   <div className="flex justify-between items-center mb-2">
                     <span className="text-gray-600">Per Session:</span>
                     <span className="font-bold text-lg">
@@ -146,24 +146,20 @@ function Courses() {
 
           <div className="learning-steps">
             {sessionContent.map((session, index) => (
-              <div key={index} className={`step-card step-${index + 1}`}>
+              <div
+                key={index}
+                className={`step-card step-${
+                  index + 1
+                } transition-transform duration-300 hover:scale-105`}
+              >
                 <div className="step-number">{index + 1}</div>
                 <div className="step-icon">
                   <i className={`${session.icon} text-blue-500 text-3xl`}></i>
                 </div>
-                <h3 className="step-title">{session.title}</h3>
+                <h3 className="step-title">{session.title}</h3>{" "}
                 <p className="step-description">{session.content}</p>
               </div>
             ))}
-          </div>
-
-          <div className="approach-card">
-            <h3 className="approach-title">🎯 Our Learning Method</h3>
-            <p className="approach-description">
-              Our courses are structured in sessions designed to progressively
-              build skills. Each session builds on the previous one, helping
-              students develop a complete project by the end of the course.
-            </p>
           </div>
         </section>
 
@@ -177,7 +173,7 @@ function Courses() {
           </div>
 
           <div className="features-grid">
-            <div className="feature-card feature-card-visual">
+            <div className="feature-card feature-card-visual transition-transform duration-300 hover:scale-105">
               <div className="feature-visual-wrapper">
                 <img
                   src="https://i.pinimg.com/736x/8c/8d/3b/8c8d3b15fa89ae06db1120a70a3f91d5.jpg"
@@ -225,7 +221,7 @@ function Courses() {
                 </div>
               </div>
             </div>
-            <div className="feature-card feature-card-visual">
+            <div className="feature-card feature-card-visual transition-transform duration-300 hover:scale-105">
               <div className="feature-visual-wrapper">
                 <img
                   src="https://img.freepik.com/free-vector/diverse-students-concept-illustration_114360-8866.jpg"
