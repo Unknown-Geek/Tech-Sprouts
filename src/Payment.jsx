@@ -233,7 +233,7 @@ function Payment() {
           </div>
         </div>
 
-        <div className="text-center mt-8">
+        <div className="text-center mt-8 mb-8">
           <button
             onClick={() => navigate("/register")}
             className="text-gray-600 hover:text-green-600 transition"
