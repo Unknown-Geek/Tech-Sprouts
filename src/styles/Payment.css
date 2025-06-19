@@ -147,31 +147,40 @@
   transition: all 0.3s ease;
 }
 
-.detail-item:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(34, 197, 94, 0.15);
-}
-
-/* Special styling for the amount item to make it full width and prominent */
+/* Special styling for the amount item to make it full width and prominent but not button-like */
 .detail-item-amount {
   grid-column: 1 / -1; /* Takes full width of the grid */
-  background: linear-gradient(135deg, #22c55e, #16a34a) !important;
-  border: 3px solid rgba(255, 255, 255, 0.3) !important;
-  padding: 2rem !important;
-  box-shadow: 0 15px 40px rgba(34, 197, 94, 0.3) !important;
-  transform: scale(1.02);
-  margin: 0.4rem;
+
+  background: rgba(255, 255, 255, 0.7) !important;
+  border: 2px solid rgba(34, 197, 94, 0.2) !important;
+  padding: 1rem !important;
+  box-shadow: 0 8px 25px rgba(34, 197, 94, 0.1) !important;
+  position: relative;
+  overflow: hidden;
 }
 
+/* Remove hover effects to avoid button-like behavior */
 .detail-item-amount:hover {
-  transform: translateY(-3px) scale(1.03) !important;
-  box-shadow: 0 20px 50px rgba(34, 197, 94, 0.4) !important;
+  transform: none !important;
+  box-shadow: 0 8px 25px rgba(34, 197, 94, 0.1) !important;
+}
+
+/* Add a subtle accent border on the left */
+.detail-item-amount::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background: linear-gradient(135deg, #22c55e, #16a34a);
+  border-radius: 0 2px 2px 0;
 }
 
 .detail-item-amount .detail-label {
-  color: rgba(255, 255, 255, 0.9) !important;
+  color: #22c55e !important;
   font-size: 1rem !important;
-  font-weight: 600 !important;
+  font-weight: 700 !important;
 }
 
 .detail-label {
@@ -190,10 +199,10 @@
 }
 
 .detail-amount {
-  font-size: 2.5rem;
-  font-weight: 900;
-  color: white !important;
-  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  font-size: 2rem;
+  font-weight: 800;
+  color: #22c55e !important;
+  text-shadow: none;
   letter-spacing: -0.02em;
 }
 
@@ -495,9 +504,9 @@
   .detail-item {
     padding: 0.75rem;
   }
-
   .detail-item-amount {
     padding: 1.25rem !important;
+    margin-top: 0.5rem;
   }
 
   .detail-amount {

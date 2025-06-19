@@ -117,8 +117,8 @@ function Payment() {
         <div className="payment-card">
           {/* Student and Course Details */}
           <div className="registration-details">
-            <h2>Registration Details</h2>
-            <div className="details-grid">
+            <h2 className="mt-8 md:mt-4">Registration Details</h2>
+            <div className="details-grid mt-12 md:mt-12">
               <div className="detail-item">
                 <div className="detail-label">Student Name</div>
                 <div className="detail-value">{studentName}</div>
@@ -139,7 +139,7 @@ function Payment() {
           </div>
 
           {/* Payment Section */}
-          <div className="payment-method">
+          <div className="payment-method mt-12">
             <h3>Payment Method</h3>
             <p className="payment-description">
               Secure payments powered by Razorpay. You'll be redirected to
