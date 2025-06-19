@@ -904,29 +904,50 @@ button:hover,
 .duolingo-stats {
   display: flex;
   justify-content: center;
-  gap: 2rem;
+  gap: 1.5rem;
   flex-wrap: wrap;
+  margin-top: 2rem;
 }
 
 .stat-item {
   text-align: center;
-  background: rgba(255, 255, 255, 0.8);
-  padding: 1rem 1.5rem;
-  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.95);
+  padding: 1.5rem 1.2rem;
+  border-radius: 25px;
   backdrop-filter: blur(10px);
-  border: 2px solid rgba(34, 197, 94, 0.2);
+  border: 2px solid rgba(34, 197, 94, 0.15);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  min-width: 120px;
+  position: relative;
+  overflow: hidden;
 }
 
-.stat-number {
-  font-size: 2rem;
+.stat-item::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #22c55e, #16a34a);
+  border-radius: 25px 25px 0 0;
+}
+
+.stat-number,
+.home-stat-number {
+  font-size: 2.2rem;
   font-weight: 900;
   color: #7c3aed;
+  margin-bottom: 0.5rem;
 }
 
 .stat-label {
-  font-size: 0.9rem;
-  font-weight: 600;
+  font-size: 0.85rem;
+  font-weight: 700;
   color: #374151;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 
 /* Container */
@@ -1528,20 +1549,21 @@ main > div:last-child,
     gap: 1rem;
     flex-wrap: wrap;
   }
-
   .stat-item {
-    padding: 0.8rem 1rem;
-    min-width: 90px;
+    padding: 1rem 0.8rem;
+    min-width: 100px;
     flex: 1;
-    max-width: 120px;
+    max-width: 140px;
+    border-radius: 20px;
   }
 
-  .stat-number {
-    font-size: 1.5rem;
+  .stat-number,
+  .home-stat-number {
+    font-size: 1.8rem;
   }
 
   .stat-label {
-    font-size: 0.8rem;
+    font-size: 0.75rem;
   }
 
   .skill-badge {
@@ -1738,16 +1760,18 @@ main > div:last-child,
   .duolingo-stats {
     gap: 0.5rem;
   }
-
   .stat-item {
-    padding: 0.6rem 0.8rem;
-    min-width: 80px;
-    max-width: 100px;
+    padding: 0.8rem 0.6rem;
+    min-width: 85px;
+    max-width: 110px;
+    border-radius: 18px;
   }
 
-  .stat-number {
-    font-size: 1.3rem;
+  .stat-number,
+  .home-stat-number {
+    font-size: 1.4rem;
   }
+
   .stat-label {
     font-size: 0.7rem;
   }

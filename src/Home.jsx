@@ -194,7 +194,7 @@ function Home() {
               Join Friends
             </a>
           </div>
-          {/* Fun stats */}
+          {/* Fun stats */}{" "}
           <div className="duolingo-stats">
             <div className="stat-item">
               <div className="stat-number">50+</div>
