@@ -11,13 +11,14 @@ import Courses from "./Courses";
 import Register from "./Register";
 import Contact from "./Contact";
 import Payment from "./Payment";
-import Loader from "./Loader";
-import "./index.css";
+import Loader from "./components/Loader";
+import "./styles/index.css";
 import logo from "../assets/logo.png";
-import { useTheme } from "./ThemeContext";
-import HamburgerIcon from "./HamburgerIcon";
+import { useTheme } from "./components/ThemeContext";
+import HamburgerIcon from "./components/HamburgerIcon";
 import { CSSTransition, TransitionGroup } from "react-transition-group";
-import "./transitions.css";
+import "./styles/transitions.css";
+import "./styles/duolingo-styles.css";
 
 // ScrollToTop component that scrolls to the top when navigating to a new page
 function ScrollToTop() {
@@ -196,7 +197,7 @@ function App() {
             <Route path="*" element={<PageTransitionWrapper />} />
           </Routes>
         </main>
-        <footer className="bg-gray-800 text-white py-8 mt-8 transition-colors duration-300">
+        <footer className="bg-gray-800 text-white py-8 transition-colors duration-300">
           <div className="container mx-auto px-4">
             <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
               <div>
